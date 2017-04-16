@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true"/>
+	<package name="website_basic" extends="struts-default" >
+	 
+	 <action name="index" class="IndexAction" method="index">
+	 	<result name="SUCCESS">/index.jsp</result>
+	 </action>
+
+	</package>
+	<package name="admin" extends="struts-default">
+		<action name="regAdmin" class="AdminAction" method="reg">
+			<result name="reg">/temp/Admin/regAdmin.jsp</result>
+		</action>
+		<action name="loginAdmin" class="AdminAction" method="login">
+			<result name="login">/temp/Admin/loginAdmin.jsp</result>
+		</action>
+		<action name="checkRegAdmin" class="AdminAction" method="checkRegAdmin">
+			<result name="SUCCESS">/temp/Admin/regSuccess.html</result>
+			<result name="FAILED">/</result>
+		</action>
+		<action name="checkAdminLogin" class="AdminAction" method="checkLogin">
+			<result name="SUCCESS">/</result>
+			<result name="FAILED">/</result>
+		</action>
+		<action name="*" class="IndexAction" method="index">
+	 	<result name="SUCCESS">/index.jsp</result>
+	 </action>
+	</package>
+	<package name="school" extends="struts-default">
+		<action name="regSchool" class="SchoolAction" method="reg">
+			<result name="reg">/regSchool.jsp</result>
+		</action>
+		<action name="checkRegSchool" class="SchoolAction" method="checkRegSchool">
+			<result name="success">/regSchoolResult.jsp</result>
+		</action>
+	</package>
+</struts>
