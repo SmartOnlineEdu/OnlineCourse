@@ -36,6 +36,7 @@ public class Demo01 {
 	        if(rSet.next()){
 	        	System.out.println("has next!");
 	        	System.out.println(rSet.getString(1));
+	        	/*≤‚ ‘github*/
 	        	
 	        }
 			stmt.close();
