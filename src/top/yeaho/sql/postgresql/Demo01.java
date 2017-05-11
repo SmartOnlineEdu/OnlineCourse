@@ -13,8 +13,8 @@ public class Demo01 {
 			Class.forName("org.postgresql.Driver");
 			//c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/test", "postgres", "root");
 			c = DriverManager.getConnection("jdbc:postgresql://114.115.203.28:5432/best", "postgres", "postgresADMIN");
-			c.setAutoCommit(false); // °Ñ×Ô¶¯Ìá½»
-			System.out.println("Ô¶³ÌÊý¾Ý¿âÁ¬½Ó³É¹¦£¬Opened database successfully");
+			c.setAutoCommit(false); // æŠŠè‡ªåŠ¨æäº¤
+			System.out.println("è¿œç¨‹æ•°æ®åº“è¿žæŽ¥æˆåŠŸï¼ŒOpened database successfully");
 
 			stmt = c.createStatement(); 
 	        /*String sql = "CREATE TABLE STUDENTS " + 
@@ -29,14 +29,14 @@ public class Demo01 {
 			//String sql = "INSERT INTO information (info) VALUES ( '{\"age\":20,\"name\":\"jeff\"}')";
 			String sql = "INSERT INTO information (info) VALUES ( '{\"age\":19,\"name\":\"apple\"}')";
 	        //stmt.executeUpdate(createTable);
-	        //System.out.println("´´½¨Êý¾Ý¿â³É¹¦£¬successfully");
+	        //System.out.println("åˆ›å»ºæ•°æ®åº“æˆåŠŸï¼Œsuccessfully");
 			//stmt.executeUpdate(sql); 
-	        System.out.println("²åÈë¼ÇÂ¼³É¹¦£¬successfully");
+	        System.out.println("æ’å…¥è®°å½•æˆåŠŸï¼Œsuccessfully");
 	        ResultSet rSet = stmt.executeQuery("select '[{\"a\":\"foo\"},{\"b\":\"bar\"},{\"c\":\"baz\"}]'::json->2");
 	        if(rSet.next()){
 	        	System.out.println("has next!");
 	        	System.out.println(rSet.getString(1));
-	        	/*²âÊÔgithub*/
+	        	/*æµ‹è¯•github*/
 	        	
 	        }
 			stmt.close();

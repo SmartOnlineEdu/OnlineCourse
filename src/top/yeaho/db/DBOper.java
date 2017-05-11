@@ -15,7 +15,7 @@ public class DBOper {
     ResultSet rs = null;
 
     /**
-     * µÃµ½Êı¾İ¿âÁ¬½Ó
+     * å¾—åˆ°æ•°æ®åº“è¿æ¥
      */
 
 
@@ -28,7 +28,7 @@ public class DBOper {
                 + user + "&password=" + pwd+"&useUnicode=true&characterEncoding=utf8";
         Class.forName(DRIVER).newInstance();
         conn = DriverManager.getConnection(URL);
-        //System.out.print("Á¬½Ó³É¹¦");
+        //System.out.print("è¿æ¥æˆåŠŸ");
         return conn;
     }
 
@@ -48,10 +48,10 @@ public class DBOper {
     }
 
     /**
-     * ÊÍ·Å×ÊÔ´
+     * é‡Šæ”¾èµ„æº
      */
     public void closeAll() {
-        // Èç¹ûrs²»¿Õ£¬¹Ø±Õrs
+        // å¦‚æœrsä¸ç©ºï¼Œå…³é—­rs
         if (rs != null) {
             try {
                 rs.close();
@@ -59,7 +59,7 @@ public class DBOper {
                 e.printStackTrace();
             }
         }
-        //Èç¹ûpstmt²»¿Õ£¬¹Ø±Õpstmt
+        //å¦‚æœpstmtä¸ç©ºï¼Œå…³é—­pstmt
         if (pstmt != null) {
             try {
                 pstmt.close();
@@ -67,7 +67,7 @@ public class DBOper {
                 e.printStackTrace();
             }
         }
-        //Èç¹ûconn²»¿Õ£¬¹Ø±Õconn
+        //å¦‚æœconnä¸ç©ºï¼Œå…³é—­conn
         if (conn != null) {
             try {
                 conn.close();
@@ -78,50 +78,50 @@ public class DBOper {
     }
 
     /**
-     * Ö´ĞĞSQLÓï¾ä£¬¿ÉÒÔ½øĞĞ²éÑ¯
+     * æ‰§è¡ŒSQLè¯­å¥ï¼Œå¯ä»¥è¿›è¡ŒæŸ¥è¯¢
      */
     public ResultSet executeQuery(String preparedSql, String[] param) {
-        //´¦ÀíSQL,Ö´ĞĞSQL
+        //å¤„ç†SQL,æ‰§è¡ŒSQL
         try {
-            // µÃµ½PreparedStatement¶ÔÏó
+            // å¾—åˆ°PreparedStatementå¯¹è±¡
             pstmt = conn.prepareStatement(preparedSql);
             if (param != null) {
                 for (int i = 0; i < param.length; i++) {
-                    // ÎªÔ¤±àÒësqlÉèÖÃ²ÎÊı
+                    // ä¸ºé¢„ç¼–è¯‘sqlè®¾ç½®å‚æ•°
                     pstmt.setString(i + 1, param[i]);
                 }
             }
-            // Ö´ĞĞSQLÓï¾ä
+            // æ‰§è¡ŒSQLè¯­å¥
             rs = pstmt.executeQuery();
         } catch (SQLException e) {
-            // ´¦ÀíSQLExceptionÒì³£
+            // å¤„ç†SQLExceptionå¼‚å¸¸
             e.printStackTrace();
         }
         return rs;
     }
 
     /**
-     * Ö´ĞĞSQLÓï¾ä£¬¿ÉÒÔ½øĞĞÔö¡¢É¾¡¢¸ÄµÄ²Ù×÷£¬²»ÄÜÖ´ĞĞ²éÑ¯
+     * æ‰§è¡ŒSQLè¯­å¥ï¼Œå¯ä»¥è¿›è¡Œå¢ã€åˆ ã€æ”¹çš„æ“ä½œï¼Œä¸èƒ½æ‰§è¡ŒæŸ¥è¯¢
      */
     public int executeUpdate(String preparedSql, String[] param) {
 
         int num = 0;
 
-        //´¦ÀíSQL,Ö´ĞĞSQL
+        //å¤„ç†SQL,æ‰§è¡ŒSQL
         try {
-            // µÃµ½PreparedStatement¶ÔÏó
+            // å¾—åˆ°PreparedStatementå¯¹è±¡
             pstmt = conn.prepareStatement(preparedSql);
             if (param != null) {
                 for (int i = 0; i < param.length; i++) {
-                    // ÎªÔ¤±àÒësqlÉèÖÃ²ÎÊı
+                    // ä¸ºé¢„ç¼–è¯‘sqlè®¾ç½®å‚æ•°
                     pstmt.setString(i + 1, param[i]);
                 }
             }
-            // Ö´ĞĞSQLÓï¾ä
+            // æ‰§è¡ŒSQLè¯­å¥
             //System.out.print(preparedSql);
             num = pstmt.executeUpdate();
         } catch (SQLException e) {
-            // ´¦ÀíSQLExceptionÒì³£
+            // å¤„ç†SQLExceptionå¼‚å¸¸
             e.printStackTrace();
         }
         return num;

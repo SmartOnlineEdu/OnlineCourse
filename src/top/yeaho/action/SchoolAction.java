@@ -11,15 +11,15 @@ public class SchoolAction extends ActionSupport {
 
 	public String reg(){
 		ActionContext actionContext = ActionContext.getContext();
-		actionContext.put("functionTitle", "×¢²áÑ§Ğ£");
+		actionContext.put("functionTitle", "æ³¨å†Œå­¦æ ¡");
 		return "reg";
 	}
 	
 	public String checkRegSchool(){
 		ActionContext actionContext = ActionContext.getContext();
-		actionContext.put("functionTitle", "×¢²á½á¹û");
-		actionContext.put("regSchoolResult", "¹§Ï²Äú£¬×¢²á³É¹¦£¡");
-		actionContext.put("information", "¸ĞĞ»Äú×¢²á±¾ÍøÕ¾£¬<a href=\"login.action\">ÏÖÔÚ¿ªÊ¼µÇÂ½</a>");
+		actionContext.put("functionTitle", "æ³¨å†Œç»“æœ");
+		actionContext.put("regSchoolResult", "æ­å–œæ‚¨ï¼Œæ³¨å†ŒæˆåŠŸï¼");
+		actionContext.put("information", "æ„Ÿè°¢æ‚¨æ³¨å†Œæœ¬ç½‘ç«™ï¼Œ<a href=\"login.action\">ç°åœ¨å¼€å§‹ç™»é™†</a>");
 		return "success";
 	}
 }
