@@ -2,10 +2,30 @@ $(document).ready(function () {
 	//INITIALIZE
 	var video = $('#myVideo');
 	var videojs = document.getElementById('myVideo');
+//  $('.caption').mouseenter(function(){
+//     $('.caption').addClass("")
+//$('.bottomContainer').css("opacity",1);
+
+//});
+//$(".caption").mouseleave(function(){
+//	 $('.caption').css("opacity",0);
+//$('.bottomContainer').css("opacity",0);
+//});
+//$('.bottomContainer').mouseenter(function(){
+//	   $('.caption').css("opacity",1);
+//$('.bottomContainer').css("opacity",1);
+
+//});
+//$('.bottomContainer').mouseleave(function(){
+//$('.caption').css("opacity",0);
+//$('.bottomContainer').css("opacity",0);
+//});
+//$('.bottomContainer').css("filter","opacity(100%)");
 	//移除控制栏
 	//video[0].removeAttribute("controls");
 	//.caption淡出
-	$('.caption').fadeOut(5000);
+	//  $('.caption').css("opacity",0);
+	//  $('.bottomContainer').css("opacity",0);
 		
 	$('#btnNext').bind('click',function(){
 		 video[0].currentTime =  video[0].currentTime +5;
@@ -49,6 +69,7 @@ $(document).ready(function () {
 		$("#btnBulletinput").addClass("fromRight");
 		$("#btnPublish").css("display","block");
 		$("#btnPublish").addClass("fromRight");
+		$("#btnBulletinput").focus();
 			tagBu=0;
 			}
 		else{
@@ -58,6 +79,15 @@ $(document).ready(function () {
 				tagBu = 1;
 			}
 	});
+	//弹幕开关
+	$("#promptSwitchClose").bind("click",function(){
+		$("#promptSwitchClose").css("display","none");
+		$("#promptSwitchOn").css("display","block");
+	})
+	$("#promptSwitchOn").bind("click",function(){
+		$("#promptSwitchOn").css("display","none");
+		$("#promptSwitchClose").css("display","block");
+	})
 	/*开关灯*/
 	var lightTag = 1;
 	$("#btnlight").bind('click',function(){
@@ -118,18 +148,18 @@ $(document).ready(function () {
 	$('.volume').on('mousedown', function(e) {
 		volumeDrag = true;
 		
-		if(volumeTrue){
+	
 		updateVolume(e.pageX);
-			}
+			
 	});
 	$(document).on('mouseup', function(e) {
-		if(volumeDrag && volumeTrue) {
+		if(volumeDrag) {
 			volumeDrag = false;
 			updateVolume(e.pageX);
 		}
 	});
 	$(document).on('mousemove', function(e) {
-		if(volumeDrag && volumeTrue) {
+		if(volumeDrag) {
 			updateVolume(e.pageX);
 		}
 	});
@@ -163,6 +193,10 @@ $(document).ready(function () {
 			$("#trumpt1").css("display","block");
 			$("#trumpt2").css("display","block");
 		}
+		video[0].muted = false;
+		$("#trumptN").css("display","none");
+$("#trumpt").css("display","block");
+$('input').removeAttr("disabled");//去除input元素的disabled属性
 
 		//update volume bar and video volume
 		$('.volumeBar').css('width', percentage + '%');
@@ -174,7 +208,7 @@ $(document).ready(function () {
 	
 	//before everything get started
 	video.on('loadedmetadata', function() {
-		console.log("执行了");
+		//console.log("执行了");
 		//start to get video buffering data 
 		setTimeout(startBuffer, 150);
 
@@ -185,43 +219,67 @@ $(document).ready(function () {
 		updateVolume(0, 0.7);
 
 		//bind video events
-		$('#myVideo')
-			.hover(function () {
-				/*	$('.control').stop().animate({
-				'bottom': 0
-				}, 500);*/
-				$('.caption').stop();
-				$('.caption').fadeIn();
-			$('.bottomContainer').stop();
-				$('.bottomContainer').fadeIn();
-			//	console.log("inin");
-			}, function () {
-				$('.caption').fadeOut();
-			$('.bottomContainer').fadeOut();
-			//	console.log("outout");
-			});
-		$('.caption')
-			.hover(function () {
-				/* Stuff to do when the mouse enters the element */
-				$('.bottomContainer').stop();
-				$('.bottomContainer').fadeIn();
-				$('.caption').stop();
-				$('.caption').fadeIn();
-			}, function () {
-				/* Stuff to do when the mouse leaves the element */
-			});
-			$('.bottomContainer')
-			.hover(function () {
-				/* Stuff to do when the mouse enters the element */
-				$('.bottomContainer').stop();
-				$('.bottomContainer').fadeIn();
-				$('.caption').stop();
-				$('.caption').fadeIn();
-			}, function () {
-				/* Stuff to do when the mouse leaves the element */
-			});
-	});
+// 		$('#myVideo')
+//			.hover(function () {
+//				/*	$('.control').stop().animate({
+//				'bottom': 0
+//				}, 500);*/
+//				$('.caption').stop();
+//				$('.caption').fadeIn();
+//				$('.bottomContainer').stop();
+//				$('.bottomContainer').fadeIn();
+//				if($("#videoContainer").width()==document.body.clientWidth){
+//setTimeout(disappearC,4000);
+//				}
 
+//			//	console.log("inin");
+//			}, function () {
+//				$('.caption').fadeOut();
+//				$('.bottomContainer').fadeOut();
+//			//	console.log("outout");
+//		});
+//		function disappearC(){
+//			$('.caption').fadeOut();
+//				$('.bottomContainer').fadeOut();
+
+					
+//		}
+	// $('.caption')
+	// 		.hover(function () {
+	// 			/* Stuff to do when the mouse enters the element */
+	// 					$('.caption').stop();
+	// 			$('.bottomContainer').stop();
+	// 		$('.bottomContainer').css("display","block");
+	// 			$('.caption').css("display","block");
+	// 		}, function () {
+	// 			/* Stuff to do when the mouse leaves the element */
+	// 		});
+	// 		$('.bottomContainer')
+	// 		.hover(function () {
+	// 			/* Stuff to do when the mouse enters the element */
+	// 									$('.caption').stop();
+	// 			$('.bottomContainer').stop();
+	// 			$('.bottomContainer').css("display","block");
+	// 			$('.caption').css("display","block");
+	// 		}, function () {
+	// 			/* Stuff to do when the mouse leaves the element */
+		
+	// 		});
+	});
+	// videojs.addEventListener('mousemove',move,true);
+
+	// function move(e){
+	// //var e=event || window.event;
+	// var y=e.clientY-videojs.offsetTop;
+	// if(y>46.67){
+//	 	console.log("best");
+//	 		$('.bottomContainer').css("display","block");
+//	 		$('.caption').css("display","block");
+	// }else{
+//	 	console.log("best	n"+y);
+		
+	// }
+	// }
 	//CONTROLS EVENTS
 	//video screen and play button clicked
 	video.bind('click', function () {
@@ -323,7 +381,7 @@ $(document).ready(function () {
 		var cul = x/progresswi;
 		var cu = (x/progresswi)*maxduration;
 		cu = cu.toFixed(0);
-		cu = timeFormat(cu-3);
+		cu = timeFormat(cu);
 		$('.currentTip').stop();
 		$('.currentTip').fadeIn();
 		$('.currentTip').css("margin-left",x);

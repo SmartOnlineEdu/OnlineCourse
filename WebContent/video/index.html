@@ -17,13 +17,14 @@
 				none - 当页面加载后不载入视频
 		-->
 	<div id="videoContainer">
-		<div class="caption">This is HTML5 video with custom controls</div>
-			<video id="myVideo" autoplay preload="auto" height="100%" width="100%">
+		<video id="myVideo" preload="auto" height="100%" width="100%">
 				<source id="videoSourceid" src="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4" type="video/mp4"></source>
 				当前浏览器不支持 video直接播放，点击这里下载视频：
 				<a href="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4">下载视频</a>
 			</video>
+				
 			<div class="bottomContainer">
+			<div class="caption">This is HTML5 video with custom controls</div>
 <svg id="loading" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="circleal" class="g-circles g-circles--v1">
           <circle class="circleg" id="12" transform="translate(35, 16.698730) rotate(-30) translate(-35, -16.698730) " cx="35" cy="16.6987298" r="10"></circle>
@@ -145,13 +146,24 @@ transform="rotate(45)" style="fill:#E5E5E5;" />
 						<span class="current"></span>
 					</div>
 					
-					
-					<input type="text" id="btnBulletinput" class="btnBulletinput btn"/>
+					<input type="text" id="btnBulletinput" placeholder="请输入弹幕内容" autofocus class="btnBulletinput btn"/>
 					<button id="btnPublish" class="btnPublish btn">	来一发	</button>
 					<svg id="btnpublishbtn" class="btnpublishbtn btn" width="60" height="32">
-						<text x="0" y="17" fill="#E5E5E5">弹幕</text>					
+						<text x="0" y="17" fill="#E5E5E5">弹幕:</text>					
 					</svg>
 					
+						<svg version="1.1" id="promptSwitchClose" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="32"
+	 viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+<path style="fill:#000;" d="M6,23h27.474C32.537,24.796,32,26.834,32,29s0.537,4.204,1.474,6H6c-3.314,0-6-2.686-6-6
+	C0,25.686,2.686,23,6,23z"/>
+<circle style="fill:#e5e5e5;" cx="45" cy="29" r="13"/>
+</svg>
+					<svg version="1.1" id="promptSwitchOn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" x="0px" y="0px"
+	 viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+<path style="fill:#000;" d="M52,23H24.526C25.463,24.796,26,26.834,26,29s-0.537,4.204-1.474,6H52c3.314,0,6-2.686,6-6
+	S55.314,23,52,23z"/>
+<circle style="fill:#e5e5e5;" cx="13" cy="29" r="13"/>
+</svg>
 					
 					<!--截屏-->
 					<svg id="picture" class="picturebtn btn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
@@ -328,8 +340,9 @@ style="fill:#E5E5E5;border:none;"/>
 	
 	<button class="cut">点击截屏</button>
 <div id="pop" class="wrap">
-	<canvas id="cutPic" ></canvas>
-	<div id="current" style="width:300px;height:300px;"></div>
+	<canvas id="cutPic"></canvas>
+	<div class="currentdiv">当前时间: <span id="current"></span></div>
+	<div class="tipRight">右键点击图片进行下载</div>
   </div>
 
 
@@ -443,7 +456,10 @@ style="fill:#E5E5E5;border:none;"/>
 				//console.log(value1);
 				$("#progress").prepend("<span class='prompt' id=prompt" + value1[0] + " valuen=" + value1[1] + "></span>");
 				//弹幕时间百分比
-				var percentPrompt = value1[0] / maxduration;
+				var valueTrue = parseInt(value1[0]);
+		
+
+				var percentPrompt = valueTrue/ maxduration;
 				//var pwi = accMul(percentPrompt, progressw);
 				//pwi = pwi.toFixed(0); //去零
 				var perc = 100 * percentPrompt;
@@ -462,8 +478,9 @@ style="fill:#E5E5E5;border:none;"/>
 				var leftp = $(this).css('left');
 				var valuen = $(this).attr('valuen');
 
+				leftp = parseInt(leftp);
+				
 				$(".tip").css('left', leftp);
-				$(".tip").css('display', 'block');
 				$(".tip").html(valuen);
 				$('.tip').stop();
 				$('.tip').fadeIn();

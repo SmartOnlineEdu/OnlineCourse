@@ -1,51 +1,18 @@
 *{
 	margin: 0;
 	padding: 0;
-}
- html,
-        body {
-            margin: 0px;
-            padding: 0px;
-            font-family: "微软雅黑";
-     
-            
-        }
-
-        /*.idDom {
-            width: 100%;
-            height: 60px;
-            background: #666;
-            position: fixed;
-            bottom: 0px;
-        }*/
-
-        /*.content {
-            display: inline-block;
-            width: 430px;
-            height: 40px;
-            position: absolute;
-            left: 0px;
-            right: 0px;
-            top: 0px;
-            bottom: 0px;
-            margin: auto;
-        }*/
-
-        .btnBulletinput {
-            border: none;
-            width: 300px;
-            height: 30px;
-        }
-
-        .stringSend {
-            width: 300px;
-            height: 40px;
-            position: absolute;
-            overflow: hidden;
-            color: #00BBFF;
-           
-            line-height: 1.5em;
-            cursor: default;
+ } 
+ .stringSend {
+    width: 300px;
+  	padding: 10px;
+	color: #E5E5E5;
+	font-size: 20px;
+	z-index: 15;
+	box-sizing: border-box;
+	font-weight: bold;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
         }
 #videoContainer {
 	position: relative;
@@ -70,12 +37,7 @@
 	-ms-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	-webkit-filter: opacity(100%);
-	filter: opacity(100%);
-	
-}
-.bottomContainer{
-	display: none;
+
 }
 /*** VIDEO CONTROLS CSS ***/
 /* control holder */
@@ -111,29 +73,33 @@
 
 .tip{
 	position: absolute;
-	bottom: 65px;
-	width: 50px;
+	bottom: 85px;
+width:fit-content;
+width:-webkit-fit-content;
+width:-moz-fit-content;
 	height: 20px;
-	-webkit-filter: opacity(100%);
-	filter: opacity(100%);
+		text-align:center;
+	margin-left: -5px;
+	color: #f30;
 	display: none;
 	float: left;
 	left:0;
+	z-index: 15;
 }
 
 .currentTip{
 	position: absolute;
-	bottom: 40px;
 	width: 40px;
 	height: 20px;
+	left: -15px;
 	-webkit-filter: opacity(100%);
 	filter: opacity(100%);
-	color: #f30;
+		color: #e5e5e5;
+	z-index: 14;
 	display: none;
-	z-index: 15;
 	line-height: 20px;
 	padding:0 5px;
-	bottom: 65px;
+	bottom: 66px;
 }
 /* PROGRESS BAR CSS */
 /* Progress bar */
@@ -149,11 +115,13 @@
 	display: block;
 	top:0px;
 	border-radius: 5px;
-		-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+	-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
     transition: width 0.3s, height 0.3s, transform 0.3s;
 }
 
-
+.progress:hover{
+	height: 7px;
+}
 .progress:hover .toptimeBar{
 	width: 10px;
 	height: 10px;
@@ -174,16 +142,15 @@
 .toptimeBar{
 	left: 0;
 	position: absolute;
-	z-index: 15;
 	overflow:visible;
 	display: inline-block;
 	border-radius: 5px;
 	height: 8px;
 	width: 8px;
 	background: #f30;
-	display: none;
-	margin-left: -3px;
-	top: -1.6px;
+	margin-left:-5px;
+	top: -1.5px;
+	z-index: 15;
 			-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
     transition: width 0.3s, height 0.3s, transform 0.3s;
 }
@@ -200,18 +167,15 @@
 
 .prompt{
 	position: absolute;
-	z-index: 15;
 	overflow:visible;
 	display: block;
 	border-radius: 5px;
 	height: 8px;
 	width: 8px;
-	background: #f30;
-	top: -1.6px;
-	box-shadow:0 1px 1px #f33 inset;
-	-moz-box-shadow:0 1px 1px #f33 inset;
-	-webkit-box-shadow:0 1px 1px #f33 inset;
-			-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+	z-index:20;
+	top: -1.7px;
+	background-color:#f30;
+	-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
     transition: width 0.3s, height 0.3s, transform 0.3s;
 }
 
@@ -219,8 +183,27 @@
 	display: none;
 }
 
+#promptSwitchOn{
+		position: absolute;
+	display: block;
+	margin-left: 308px;
+	top: -1px;
+	cursor: pointer;
+	
+}
+#promptSwitchClose{
+		position: absolute;
+	display: block;
+	margin-left: 308px;
+	top: -1px;
+	cursor: pointer;
+	display: none;
+}
+#myVideo{
+	z-index: 1;
+}
+
 .bufferBar {
-	z-index: 5;
 	width: 0;
 	height: 100%;
 	top: 0;
@@ -231,8 +214,15 @@
 	background: -o-linear-gradient(top, #999, #666);
 
 }
-/* time and duration */
+.bottomContainer{
+ 	filter: opacity(0%);
+	-webkit-transition: filter 1.5s; /* For Safari 3.1 to 6.0 */
+    transition: filter 1.5s;
+}
 
+.bottomContainer:hover{
+filter: opacity(100%);
+}
 
 
 /* control bottom part */
@@ -253,7 +243,7 @@
 .btmControl #btnPlaydiv{
 	float: left;
 }
-/*暂停*/
+/*鏆傚仠*/
 .btmControl .btnPause {
 	position: absolute;
 	float: left;
@@ -261,7 +251,7 @@
 	margin-left: 20px;
 	display: none;
 }
-/*播放*/
+/*鎾斁*/
 .btmControl .btnPlay{
 	float: left;
 	position: absolute;
@@ -269,7 +259,7 @@
 	top:0px;
 	cursor: pointer;
 }
-/*快进*/
+/*蹇繘*/
 .btmControl .btnNext{
 	position: absolute;
 	display: block;
@@ -285,7 +275,7 @@
 	top: 0px;
 	cursor: pointer;
 }
-/*倍速*/
+/*鍊嶉��*/
 .btmControl .btnSpeedalldiv{
 	position: absolute;
 	display: block;
@@ -338,37 +328,38 @@
 .btmControl #btnSpeedalldiv:hover #btnSpeed7{
 	display: block;
 }
-/*弹幕*/
+/*寮瑰箷*/
 .btmControl .btnBulletinput{
 	width: 400px;
 	height: 30px;
 	position: absolute;
 	display: block;
-	z-index: 20;
-	color: #fff;
+
+	color: #f30;
 	padding: 2px 10px;
 	background-color: #e5e5e5;
-	-webkit-filter: opacity(80%);
-	filter: opacity(80%);
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
 	left: 50%;
 	margin-left: -220px;
-	top: -90px;
+	top: -75px;
 	outline: none;
 	border: none;
 	display: none;
+	z-index: 20;
 }
 .btmControl .btnPublish{
 	width: 70px;
 	height: 34px;
 		background-color: #e5e5e5;
-	-webkit-filter: opacity(80%);
-	filter: opacity(80%);
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
 	border: none;
 	outline: none;
 	position: absolute;
 	left:50%;
 	margin-left: 220px;
-	top:-90px;
+	top:-75px;
 	display: none;
 }
 /* VOLUME BAR CSS */
@@ -405,8 +396,8 @@
 }
 .btnpublishbtn{
 		position: absolute;
-	margin-left: 245px;
-	top: 3.9px;
+	margin-left: 260px;
+	top: 4.1px;
 	display: block;
 	cursor: pointer;
 	
@@ -505,14 +496,43 @@
   display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(255,255, 255, .8)
+  background-color: rgba(0,0, 0, .7)
 }
 
 .wrap canvas {
+ 	position: absolute;
   display: block;
-  margin: 10px auto;
+  
+  left: 50%;
   width: 600px;
+  margin-left: -300px;
+  margin-top: 60px;
+  float: left;
   cursor: pointer
+}
+.currentdiv{
+	position: absolute;
+	left: 50%;
+	width: 200px;
+	height: 50px;
+	margin-left: -100px;
+	margin-top:20px;
+	display: block;
+	color: #e5e5e5
+}
+.tipRight{
+	font-size: 15px;
+	position:fixed;
+	bottom: 0px;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	color: #f30;
+		width:220px;
+	height:50px;
+	
+animation:myfirst 20s;
+	-webkit-animation:myfirst 20s; /* Safari and Chrome */
+	animation-iteration-count:infinite;
 }
 /*.loading{
 	position:absolute;
@@ -745,4 +765,15 @@
     0% { transform: translate(0px, 0px) }
 }
 
+@keyframes myfirst
+{
+	0%   { left:0%; bottom:0px;}
+	100% { left:100%; bottom:0px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	0%   { left:0%; bottom:0px;}
+	100% { left:100%; bottom:0px;}
+}
 
