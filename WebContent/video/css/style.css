@@ -172,6 +172,7 @@ width:-moz-fit-content;
 	border-radius: 5px;
 	height: 8px;
 	width: 8px;
+	margin-left:-4px;
 	z-index:20;
 	top: -1.7px;
 	background-color:#f30;
@@ -243,7 +244,7 @@ filter: opacity(100%);
 .btmControl #btnPlaydiv{
 	float: left;
 }
-/*鏆傚仠*/
+/*閺嗗倸浠�*/
 .btmControl .btnPause {
 	position: absolute;
 	float: left;
@@ -251,7 +252,7 @@ filter: opacity(100%);
 	margin-left: 20px;
 	display: none;
 }
-/*鎾斁*/
+/*閹绢厽鏂�*/
 .btmControl .btnPlay{
 	float: left;
 	position: absolute;
@@ -259,7 +260,7 @@ filter: opacity(100%);
 	top:0px;
 	cursor: pointer;
 }
-/*蹇繘*/
+/*韫囶偉绻�*/
 .btmControl .btnNext{
 	position: absolute;
 	display: block;
@@ -275,7 +276,7 @@ filter: opacity(100%);
 	top: 0px;
 	cursor: pointer;
 }
-/*鍊嶉��*/
+/*閸婂秹锟斤拷*/
 .btmControl .btnSpeedalldiv{
 	position: absolute;
 	display: block;
@@ -328,7 +329,7 @@ filter: opacity(100%);
 .btmControl #btnSpeedalldiv:hover #btnSpeed7{
 	display: block;
 }
-/*寮瑰箷*/
+/*瀵懓绠�*/
 .btmControl .btnBulletinput{
 	width: 400px;
 	height: 30px;

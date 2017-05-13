@@ -79,6 +79,7 @@ $(document).ready(function () {
 				tagBu = 1;
 			}
 	});
+	
 	//弹幕开关
 	$("#promptSwitchClose").bind("click",function(){
 		$("#promptSwitchClose").css("display","none");
@@ -453,8 +454,6 @@ $('input').removeAttr("disabled");//去除input元素的disabled属性
 			setTimeout(startBuffer, 500);
 		}
 	};
-
-
 
 	//Time format converter - 00:00
 	function timeFormat(seconds) {

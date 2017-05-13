@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ page import="top.yeaho.service.PromptService"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +12,20 @@
 </head>
 
 <body>
-	<!--preload = ""
-			如果出现该属性，则视频在页面加载时进行加载，并预备播放。
-			如果使用 "autoplay"，则忽略该属性。
-				auto - 当页面加载后载入整个视频
-				meta - 当页面加载后只载入元数据
-				none - 当页面加载后不载入视频
-		-->
+
+	<div id="ni">
+		<%
+		PromptService ProSer = new PromptService();
+		ProSer.serviceForPrompt(request, response);
+		%>
+	</div>
+	
+
 	<div id="videoContainer">
 		<video id="myVideo" preload="auto" height="100%" width="100%">
 				<source id="videoSourceid" src="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4" type="video/mp4"></source>
-				当前浏览器不支持 video直接播放，点击这里下载视频：
-				<a href="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4">下载视频</a>
+当前浏览器不支持 video直接播放，点击这里下载视频：				
+				<a href="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4">下载视频</a>
 			</video>
 				
 			<div class="bottomContainer">
@@ -55,11 +60,11 @@
 			</div>
 
 			<div class="btmControl">
-					<!--播放暂停-->
+					<!--æ­æ¾æå-->
 					<svg id="btnPlay"  class="btnPlay btn" version="1.1" width="32" height="32">
 						<polygon points="0,0 28,16 0,32" style="fill:#E5E5E5;" />
 					</svg>
-					<!--暂停-->
+					<!--æå-->
 					<svg id="btnPause" class="btnPause btn" width="32" height="32">
 						<rect x="5" y="2" width="8" height="28"
 				style="fill:#E5E5E5;"/>
@@ -70,7 +75,7 @@
 					<svg id="btnNext" class="btnNext btn" width="32" height="32">
 						<path d="M0,0 L16,16 L0,32 L0,0 L16,16 L16,0 L32,16 L16,32 L16,16 Z" style="fill:#E5E5E5;" />
 					</svg>
-					<!--下一个-->
+					<!--ä¸ä¸ä¸ª-->
 					<svg id="btnGo" class="btnGo btn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32" height="32"
 					 viewBox="0 0 51.426 51.426"  xml:space="preserve">
 				<polygon style="fill:#E5E5E5;stroke:#E5E5E5;stroke-width:6;stroke-miterlimit:10;" points="38.713,25.713 9.713,45.713 
@@ -118,7 +123,7 @@ transform="rotate(45)" style="fill:#E5E5E5;" />
 
 					<div id="btnSpeedalldiv" class="btnSpeedalldiv" width="60" height="32">
 					<svg id="btnSpeedall" class="btnSpeedall btn" width="60" height="32">
-						<text x="10" y="25" fill="#E5E5E5" >倍速</text>
+						<text x="10" y="25" fill="#E5E5E5" >倍速</text>
 					</svg>
 					<svg id="btnSpeed1" class="btnSpeed1 btnSpeed btn" width="60" height="32">
 						<text x="0" y="15" fill="#E5E5E5">x0.5</text>
@@ -146,8 +151,8 @@ transform="rotate(45)" style="fill:#E5E5E5;" />
 						<span class="current"></span>
 					</div>
 					
-					<input type="text" id="btnBulletinput" placeholder="请输入弹幕内容" autofocus class="btnBulletinput btn"/>
-					<button id="btnPublish" class="btnPublish btn">	来一发	</button>
+					<input type="text" id="btnBulletinput" placeholder="è¯·è¾å¥å¼¹å¹åå®¹" autofocus class="btnBulletinput btn"/>
+					<button id="btnPublish" class="btnPublish btn">来一发</button>
 					<svg id="btnpublishbtn" class="btnpublishbtn btn" width="60" height="32">
 						<text x="0" y="17" fill="#E5E5E5">弹幕:</text>					
 					</svg>
@@ -165,7 +170,7 @@ transform="rotate(45)" style="fill:#E5E5E5;" />
 <circle style="fill:#e5e5e5;" cx="13" cy="29" r="13"/>
 </svg>
 					
-					<!--截屏-->
+					<!--æªå±-->
 					<svg id="picture" class="picturebtn btn" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 	  width="32" height="32" viewBox="0 0 512 512" xml:space="preserve">
 <path fill="#E5E5E5" d="M0,64v416h512V64H0z M480,448H32V96h448V448z M352,176c0,26.51,21.49,48,48,48s48-21.49,48-48s-21.49-48-48-48
@@ -173,7 +178,7 @@ transform="rotate(45)" style="fill:#E5E5E5;" />
 </svg>
 
 					
-					<!--灯泡-->
+					<!--ç¯æ³¡-->
 					
 					<svg id="btnlight" class="btnlight btn" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="32px" height="32px" viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
@@ -221,7 +226,7 @@ style="fill:#E5E5E5;" transform="rotate(-30)"/>
 		c0.042,0.005,0.084,0.008,0.125,0.008c0.497,0,0.928-0.37,0.991-0.876C38.399,59.386,38.011,58.886,37.463,58.817z" fill="#E5E5E5"/>
 </svg>
 
-	<!--全屏-->
+	<!--å¨å±-->
 					
 <svg id="btnFullScreenIn" class="btnFullScreenIn btn" width="57" height="40">
 	<rect x="5" y="2" width="6" height="3"
@@ -338,7 +343,7 @@ style="fill:#E5E5E5;border:none;"/>
 
 	<button id="btnFS1" onclick="launchFullscreen(document.getElementById('videoContainer'));">btnFS</button>
 	
-	<button class="cut">点击截屏</button>
+	<button class="cut">点击截屏</button>
 <div id="pop" class="wrap">
 	<canvas id="cutPic"></canvas>
 	<div class="currentdiv">当前时间: <span id="current"></span></div>
@@ -348,12 +353,9 @@ style="fill:#E5E5E5;border:none;"/>
 
 	<script type="text/javascript">
 		$("#btnGo").bind("click",function(){
-			console.log("更换");
 			document.getElementById("myVideo").src="001.mp4";
 		});
-		String.prototype.Right = function (i) { //为String对象增加一个Right方法
-			return this.slice(0, this.length - i); //返回值为 以“该字符串长度减i”为起始 到 该字符串末尾 的截取字符串
-		};
+
 		var video = $("#myVideo");
 		var $canvas = $('#cutPic');
 		var progress = $('.progress');
@@ -371,8 +373,8 @@ style="fill:#E5E5E5;border:none;"/>
 		
 		var ctx = $canvas[0].getContext('2d');
 		$('#picture').bind('click', function () {
-			var w = video[0].videoWidth;//视频原有尺寸
-			var h = video[0].videoHeight;//视频原有尺寸
+			var w = video[0].videoWidth;//è§é¢åæå°ºå¯¸
+			var h = video[0].videoHeight;//è§é¢åæå°ºå¯¸
 			$canvas.attr({
 				width: w,
 				height: h,
@@ -382,12 +384,16 @@ style="fill:#E5E5E5;border:none;"/>
 			var base64 = $canvas[0].toDataURL('images/png');
 			/*console.log(base64); */
 		});
-		//加载的弹幕
-		//节点设置
-		var pData = "10,第1条|20,第2条|30,第3条|40,第4条|";
+		
+		String.prototype.Right = function (i) { //ä¸ºStringå¯¹è±¡å¢å ä¸ä¸ªRightæ¹æ³
+			return this.slice(0, this.length - i); //è¿åå¼ä¸º ä»¥âè¯¥å­ç¬¦ä¸²é¿åº¦åiâä¸ºèµ·å§ å° è¯¥å­ç¬¦ä¸²æ«å°¾ çæªåå­ç¬¦ä¸²
+		};
+		
+		var pData = $("#promptValue").html(); 
 
 		pData = pData.Right(1);
 		pData = pData.split("|");
+		console.log(pData); 
 		/*		console.log(pTime);
 				console.log(pData);*/
 
@@ -405,7 +411,7 @@ style="fill:#E5E5E5;border:none;"/>
 			}
 		}, 200);
 
-		//浮点数相乘
+		//æµ®ç¹æ°ç¸ä¹
 		function accMul(arg1, arg2) {
 			if (isNaN(arg1)) {
 				arg1 = 0;
@@ -449,19 +455,19 @@ style="fill:#E5E5E5;border:none;"/>
 			//calculate drag position
 			//and update video currenttime
 			//as well as progress bar
-			//获取弹幕数组
+			//è·åå¼¹å¹æ°ç»
 			$.each(pData, function (index1, value1) {
-				/*截取弹幕字符串 value[0]为秒数,value[1]为弹幕内容*/
+				/*æªåå¼¹å¹å­ç¬¦ä¸² value[0]ä¸ºç§æ°,value[1]ä¸ºå¼¹å¹åå®¹*/
 				value1 = value1.split(",");
 				//console.log(value1);
 				$("#progress").prepend("<span class='prompt' id=prompt" + value1[0] + " valuen=" + value1[1] + "></span>");
-				//弹幕时间百分比
+				//å¼¹å¹æ¶é´ç¾åæ¯
 				var valueTrue = parseInt(value1[0]);
 		
 
 				var percentPrompt = valueTrue/ maxduration;
 				//var pwi = accMul(percentPrompt, progressw);
-				//pwi = pwi.toFixed(0); //去零
+				//pwi = pwi.toFixed(0); //å»é¶
 				var perc = 100 * percentPrompt;
 				//console.log("the pwi2"+pwi);
 				$("#prompt" + value1[0]).css("left", perc + "%");
@@ -473,8 +479,8 @@ style="fill:#E5E5E5;border:none;"/>
 
 
 			$('.prompt').hover(function () {
-				/*this 的内容*/
-				/*<span class="prompt" id="prompt40" valuen="第4条" style="left: 19.3686%;"></span>*/
+				/*this çåå®¹*/
+				/*<span class="prompt" id="prompt40" valuen="ç¬¬4æ¡" style="left: 19.3686%;"></span>*/
 				var leftp = $(this).css('left');
 				var valuen = $(this).attr('valuen');
 
@@ -493,36 +499,36 @@ style="fill:#E5E5E5;border:none;"/>
 			//$('#'+promptId).css('margin-left',x+"px");
 		}
 
-		//显示提示
+		//æ¾ç¤ºæç¤º
 
 
-		/*window.innerWidth 这里的宽度和高度不包括菜单栏、工具栏以及滚动条等的高度*/
+		/*window.innerWidth è¿éçå®½åº¦åé«åº¦ä¸åæ¬èåæ ãå·¥å·æ ä»¥åæ»å¨æ¡ç­çé«åº¦*/
 
 		//video1.muted = true;
-		/*video.networkState 表示音频/视频元素的当前网络状态
-				0 = NETWORK_EMPTY - 音频/视频尚未初始化
-			1 = NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络
-			2 = NETWORK_LOADING - 浏览器正在下载数据
-			3 = NETWORK_NO_SOURCE - 未找到音频/视频来源
+		/*video.networkState è¡¨ç¤ºé³é¢/è§é¢åç´ çå½åç½ç»ç¶æ
+				0 = NETWORK_EMPTY - é³é¢/è§é¢å°æªåå§å
+			1 = NETWORK_IDLE - é³é¢/è§é¢æ¯æ´»å¨çä¸å·²éåèµæºï¼ä½å¹¶æªä½¿ç¨ç½ç»
+			2 = NETWORK_LOADING - æµè§å¨æ­£å¨ä¸è½½æ°æ®
+			3 = NETWORK_NO_SOURCE - æªæ¾å°é³é¢/è§é¢æ¥æº
 	 * */
 		//	console.log("the networkState is: " + video1.networkState);
 
-		/*	var rotate3 = (Math.acos(480/640)*180/Math.PI).toFixed(2); // 新宽度 / 旧宽度
-			document.write('<div>宽高比减小时，以高度为基准，调整rotateY='+rotate3+' uideg</div>');
+		/*	var rotate3 = (Math.acos(480/640)*180/Math.PI).toFixed(2); // æ°å®½åº¦ / æ§å®½åº¦
+			document.write('<div>å®½é«æ¯åå°æ¶ï¼ä»¥é«åº¦ä¸ºåºåï¼è°æ´rotateY='+rotate3+' uideg</div>');
 				document.getElementById('myVideo').style.transform = 'rotateY('+rotate3+'deg)';*/
 
-/*			var rotate2 = (Math.acos(280/360)*180/Math.PI).toFixed(2); // 新高度 / 旧高度
-			document.write('<div>宽高比增加时，以宽度为基准，调整rotateX='+rotate2+'deg</div>');
+/*			var rotate2 = (Math.acos(280/360)*180/Math.PI).toFixed(2); // æ°é«åº¦ / æ§é«åº¦
+			document.write('<div>å®½é«æ¯å¢å æ¶ï¼ä»¥å®½åº¦ä¸ºåºåï¼è°æ´rotateX='+rotate2+'deg</div>');
 			document.getElementById('myVideo').style.transform = 'rotateX('+rotate2+'deg)';*/
 $("#size4").bind("click",function(){
-		var rotate2 = (Math.acos(480/640)*180/Math.PI).toFixed(2);// 新高度 / 旧高度
+		var rotate2 = (Math.acos(480/640)*180/Math.PI).toFixed(2);// æ°é«åº¦ / æ§é«åº¦
 			document.getElementById('myVideo').style.transform = 'rotateX('+rotate2+'deg)';
 	$("#size4").css("display","none");
 	$("#size16").css("display","block");
 
 })
 $("#size16").bind("click",function(){
-	var rotate2 = 0; // 新高度 / 旧高度
+	var rotate2 = 0; // æ°é«åº¦ / æ§é«åº¦
 	document.getElementById('myVideo').style.transform = 'rotateX('+rotate2+'deg)';
 	$("#size16").css("display","none");
 	$("#size4").css("display","block");
@@ -541,8 +547,8 @@ $("#size16").bind("click",function(){
 			}
 		});
 
-		/*fullnum 0:默认width:600px,height:350px
-										  1:全屏100%
+		/*fullnum 0:é»è®¤width:600px,height:350px
+										  1:å¨å±100%
 							 * */
 		var fullnum = 0;
 		$(window).bind("resize", function () {
@@ -560,7 +566,7 @@ $("#size16").bind("click",function(){
 			}
 		});
 	
-		/*进入全屏*/
+		/*è¿å¥å¨å±*/
 		function launchFullscreen(element) {
 			fullnum = 1;
 							
@@ -600,7 +606,7 @@ if(y > 62){
 */
 
 //}*/
-		/*退出全屏*/
+		/*éåºå¨å±*/
 		function exitFullscreen() {
 			$("#videoContainer").css({
 				width: "600px",
@@ -616,12 +622,12 @@ if(y > 62){
 		}
 		
 
-		// 获取 视频的宽高,但是获取不到,但是可以用输出video[0],可以看到返回的视频宽高
+		// è·å è§é¢çå®½é«,ä½æ¯è·åä¸å°,ä½æ¯å¯ä»¥ç¨è¾åºvideo[0],å¯ä»¥çå°è¿åçè§é¢å®½é«
 
 		var videoH = video[0].videoHeight;
 		var videoW = video[0].videoWidth;
 		
-		 // 获取要走的弹幕元素
+		 // è·åè¦èµ°çå¼¹å¹åç´ 
         var videoContainerW = parseInt($("#videoContainer").width());
         var videoContainerH = parseInt($("#videoContainer").height());
         var videoContainer = $("#videoContainer");
@@ -630,20 +636,20 @@ if(y > 62){
         var width;
         width = videoContainerW;
    //     var colorArr = ["#cfaf12", "#12af01", "#981234", "#adefsa", "#db6be4", "#f5264c", "#d34a74"];
-        //点击发射弹幕
+        //ç¹å»åå°å¼¹å¹
         btnPublish.bind("click", sendBarrager);
-        //监听Enter事件
+        //çå¬Enteräºä»¶
         document.onkeydown = function (e) {
             if (e.keyCode == 13) {
                 sendBarrager();
             }
         }
-        //发送弹幕函数
+        //åéå¼¹å¹å½æ°
         function sendBarrager() {
             var creSpan = $("<span class='stringSend'></span>");
-            //input输入框里面的内容
+            //inputè¾å¥æ¡éé¢çåå®¹
             var text = $("#btnBulletinput").val();
-            //添加元素里面的内容
+            //æ·»å åç´ éé¢çåå®¹
             creSpan.text(text);
             $("#btnBulletinput").val("");
             
@@ -658,7 +664,7 @@ if(y > 62){
             Top = parseInt(videoContainerH * (Math.random()));
            
             if (Top > videoContainerH - 150) {
-                //距离顶部的位置
+                //è·ç¦»é¡¶é¨çä½ç½®
                 Top = videoContainerH - 150;
             }
 

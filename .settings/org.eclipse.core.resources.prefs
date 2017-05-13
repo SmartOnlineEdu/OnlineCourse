@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/noindex.jsp=UTF-8
+encoding//WebContent/video/css/style.css=UTF-8
 encoding//src/top/yeaho/action/AdminAction.java=UTF-8
 encoding//src/top/yeaho/action/IndexAction.java=UTF-8
 encoding//src/top/yeaho/action/SchoolAction.java=UTF-8
