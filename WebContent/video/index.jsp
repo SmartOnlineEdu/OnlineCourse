@@ -23,14 +23,12 @@
 
 	<div id="videoContainer">
 		<video id="myVideo" preload="auto" height="100%" width="100%">
-				<source id="videoSourceid" src="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4" type="video/mp4"></source>
+				<source id="videoSourceid" src="123.mp4" type="video/mp4"></source>
 当前浏览器不支持 video直接播放，点击这里下载视频：				
 				<a href="http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4">下载视频</a>
 			</video>
-				
-			<div class="bottomContainer">
-			<div class="caption">This is HTML5 video with custom controls</div>
-<svg id="loading" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			
+			<svg id="loading" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="circleal" class="g-circles g-circles--v1">
           <circle class="circleg" id="12" transform="translate(35, 16.698730) rotate(-30) translate(-35, -16.698730) " cx="35" cy="16.6987298" r="10"></circle>
           <circle class="circleg" id="11" transform="translate(16.698730, 35) rotate(-60) translate(-16.698730, -35) " cx="16.6987298" cy="35" r="10"></circle>
@@ -46,6 +44,10 @@
           <circle class="circleg" id="1" cx="60" cy="10" r="10"></circle>
       </g>
   </svg>
+				
+			<div class="bottomContainer">
+			<div class="caption">This is HTML5 video with custom controls</div>
+
 			<div class="tip"></div>
 			<div class="currentTip"></div>
 			<div class="control">
