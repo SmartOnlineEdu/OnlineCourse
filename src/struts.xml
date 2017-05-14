@@ -34,9 +34,13 @@
 
 		<!-- 管理员添加一门课程用于显示的第一屏 -->
 	 	<action name="regCourse" class="AdminAction" method="regCourseView">
-	 		<result name="SUCCESS">/</result>
+	 		<result name="success">/temp/Admin/regCourse.jsp</result>
 	 	</action>
 	 	
+	 	<!-- 管理员添加一门课程用于接受提交信息 -->
+	 	<action name="regCourseData" class="AdminAction" method="regCourseData">
+	 		<result name="success">/temp/Admin/regCourseResult.jsp</result>
+	 	</action>
 	 	
 	</package>
 	

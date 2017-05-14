@@ -25,6 +25,7 @@
 		<mapping resource="top/yeaho/entities/School.hbm.xml" />
 		<mapping resource="top/yeaho/entities/Course.hbm.xml" />
 		<mapping resource="top/yeaho/entities/Teacher.hbm.xml" />
+		<mapping resource="top/yeaho/entities/Student.hbm.xml" />
 		<mapping resource="top/yeaho/entities/StudentCourseTeacherPlan.hbm.xml" />
 		
 	</session-factory>

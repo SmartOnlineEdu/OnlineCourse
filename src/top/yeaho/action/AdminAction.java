@@ -3,17 +3,26 @@ package top.yeaho.action;
 import org.hibernate.Session;
 
 import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import top.yeaho.entities.Admin;
 import top.yeaho.entities.Course;
+import top.yeaho.entities.Module;
+import top.yeaho.entities.Student;
 import top.yeaho.service.AdminServiceImpl;
 
 public class AdminAction extends ActionSupport{
 	/**
+	 * 
+	 * @author gaofeng
+	 * @time 2017-05-14 20:20:00
+	 * @version 1.0
+	 * 
 	 * 该类主要包含了系统管理员可用操作的函数类
 	 * 涉及管理员的操作必须在本类完成编写，同时开启拦截器
 	 * 拦截序列 = 登录拦截 + 权限拦截 + 自定义拦截序列
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String adminName = "";
@@ -23,11 +32,43 @@ public class AdminAction extends ActionSupport{
 	private Admin admin;
 	private String courseName;
 	private String courseDes;
-	private Course course; //尚未Spring注册
+	private Course course; 
+	private Module module;
+	private Student student;
+	private String courseInformation;
+	private String courseNo;
 	
-	/**
-	 * 以下getter和setter主要用于Spring注入和模型驱动
-	 * */
+	
+	public String getCourseNo() {
+		return courseNo;
+	}
+	public void setCourseNo(String courseNo) {
+		this.courseNo = courseNo;
+	}
+	public String getCourseInformation() {
+		return courseInformation;
+	}
+	public void setCourseInformation(String courseInformation) {
+		this.courseInformation = courseInformation;
+	}
+	public Course getCourse() {
+		return course;
+	}
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+	public Module getModule() {
+		return module;
+	}
+	public void setModule(Module module) {
+		this.module = module;
+	}
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	public String getCourseName() {
 		return courseName;
 	}
@@ -92,6 +133,18 @@ public class AdminAction extends ActionSupport{
 	 * 用于显示添加课程的第一屏页面
 	 * */
 	public String regCourseView(){
+		ActionContext actionContext = ActionContext.getContext();
+		module.setModuleName("添加课程");
+		module.setModuleLink("regCourse.action");
+		module.setTip("允许学校管理员增设新的课程");
+		module.setModuleBerif("请先填写基础信息，随后进入课程详情设置页面");
+		student.setStudentName("曹燕妮");
+		student.setStudentCampus("曲阜师范大学");
+		student.setStudentClass("2014级软件开发");
+		student.setStudentCompany("惠普集团");
+		
+		actionContext.put("module", module);
+		actionContext.put("student", student);
 		return Action.SUCCESS;
 	}
 	
@@ -117,7 +170,7 @@ public class AdminAction extends ActionSupport{
 	 * 用于注册一门新的课程，系统管理员第一步需要提供课程名和课程描述
 	 * 逻辑层生成实体类写入数据库后，跳转到信息补充页面进一步完善课程信息
 	 * */
-	public String regCourse(){
+	public String regCourseData(){
 		
 		course.setCourseName(courseName);
 		course.setCourseDes(courseDes);

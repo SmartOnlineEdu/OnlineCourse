@@ -36,13 +36,17 @@
 	<bean id="Teacher" class="top.yeaho.entities.Teacher" scope="prototype"></bean>
 	<bean id="StudentCourseTeacherPlan" class="top.yeaho.entities.StudentCourseTeacherPlan" scope="prototype"></bean>
 	<bean id="School" class="top.yeaho.entities.School" scope="prototype"></bean>
-	
+	<bean id="Student" class="top.yeaho.entities.Student" scope="prototype"></bean>
+	<bean id="Module" class="top.yeaho.entities.Module" scope="prototype"></bean>
 
 
 	<!-- Action注册 -->
 	<bean id="AdminAction" class="top.yeaho.action.AdminAction" scope="prototype">
 		<property name="adminServiceImpl" ref="AdminServiceImpl"></property>
 		<property name="admin" ref="Admin"></property>	 
+		<property name="course" ref="Course"></property>
+		<property name="module" ref="Module"></property>
+		<property name="student" ref="Student"></property>
 	</bean>
 	<bean id="IndexAction" class="top.yeaho.action.IndexAction"></bean>
 	<bean id="SchoolAction" class="top.yeaho.action.SchoolAction"></bean>
