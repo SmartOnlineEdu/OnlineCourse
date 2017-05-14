@@ -4,6 +4,8 @@ package top.yeaho.entities;
 public class Course {
 	private int id;
 	private String courseName;
+	private String courseDes;
+	
 	public int getId() {
 		return id;
 	}
@@ -16,6 +18,12 @@ public class Course {
 	public void setCourseName(String courseName) {
 		this.courseName = courseName;
 	}
-
+	public String getCourseDes() {
+		return courseDes;
+	}
+	public void setCourseDes(String courseDes) {
+		this.courseDes = courseDes;
+	}
+	
 	
 }
