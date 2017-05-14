@@ -7,7 +7,8 @@
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/onlineteach?useUnicode=true&amp;characterEncoding=UTF-8</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">JeffGAOfeng0532!@</property>
+		<property name="connection.password"></property>
+		<!-- <property name="connection.password">JeffGAOfeng0532!@</property> -->
 
 
 		<!-- SQL dialect 方言 -->
@@ -22,6 +23,9 @@
 		
 		<mapping resource="top/yeaho/entities/Admin.hbm.xml" />
 		<mapping resource="top/yeaho/entities/School.hbm.xml" />
+		<mapping resource="top/yeaho/entities/Course.hbm.xml" />
+		<mapping resource="top/yeaho/entities/Teacher.hbm.xml" />
+		<mapping resource="top/yeaho/entities/StudentCourseTeacherPlan.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>
