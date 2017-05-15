@@ -38,7 +38,8 @@
 	<bean id="School" class="top.yeaho.entities.School" scope="prototype"></bean>
 	<bean id="Student" class="top.yeaho.entities.Student" scope="prototype"></bean>
 	<bean id="Module" class="top.yeaho.entities.Module" scope="prototype"></bean>
-
+	<bean id="SchoolClass" class="top.yeaho.entities.SchoolClass" scope="prototype"></bean>
+	
 
 	<!-- Action注册 -->
 	<bean id="AdminAction" class="top.yeaho.action.AdminAction" scope="prototype">

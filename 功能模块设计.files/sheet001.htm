@@ -1,0 +1,740 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="ProgId" content="Excel.Sheet"/>
+  <meta name="Generator" content="WPS Office ET"/>
+  <link id="Main-File" rel="Main-File" href="../功能模块设计.html"/>
+  <link rel="File-List" href="filelist.xml"/>
+  <link rel="Stylesheet" href="stylesheet.css"/>
+  <style>
+<!-- @page
+	{margin:0.98in 0.75in 0.98in 0.75in;
+	mso-header-margin:0.51in;
+	mso-footer-margin:0.51in;}
+ -->  </style>
+  <!--[if gte mso 9]>
+   <xml>
+    <x:WorksheetOptions>
+     <x:DefaultRowHeight>295</x:DefaultRowHeight>
+     <x:StandardWidth>2273</x:StandardWidth>
+     <x:Selected/>
+     <x:Panes>
+      <x:Pane>
+       <x:Number>3</x:Number>
+       <x:ActiveCol>4</x:ActiveCol>
+       <x:ActiveRow>17</x:ActiveRow>
+       <x:RangeSelection>E18</x:RangeSelection>
+      </x:Pane>
+     </x:Panes>
+     <x:ProtectContents>False</x:ProtectContents>
+     <x:ProtectObjects>False</x:ProtectObjects>
+     <x:ProtectScenarios>False</x:ProtectScenarios>
+     <x:PageBreakZoom>100</x:PageBreakZoom>
+     <x:Print>
+      <x:PaperSizeIndex>9</x:PaperSizeIndex>
+     </x:Print>
+    </x:WorksheetOptions>
+   </xml>
+  <![endif]-->
+  <script language="JavaScript">
+	if (window.name!="frSheet")
+		window.location.replace("../功能模块设计.html");
+</script>
+ </head>
+ <body link="blue" vlink="purple" class="xl65">
+  <table width="1109.40" border="0" cellpadding="0" cellspacing="0" style='width:1094.20pt;border-collapse:collapse;table-layout:fixed;'>
+   <col width="80.15" class="xl65" style='mso-width-source:userset;mso-width-alt:2248;'/>
+   <col width="82.99" class="xl65" style='mso-width-source:userset;mso-width-alt:2327;'/>
+   <col width="97.99" class="xl65" style='mso-width-source:userset;mso-width-alt:2748;'/>
+   <col width="108.03" class="xl65" style='mso-width-source:userset;mso-width-alt:3030;'/>
+   <col width="111.98" class="xl65" style='mso-width-source:userset;mso-width-alt:3141;'/>
+   <col width="129.98" class="xl65" style='mso-width-source:userset;mso-width-alt:3646;'/>
+   <col width="166.99" class="xl65" style='mso-width-source:userset;mso-width-alt:4684;'/>
+   <col width="170.99" class="xl65" style='mso-width-source:userset;mso-width-alt:4796;'/>
+   <col width="80.15" span="16376" class="xl65" style='mso-width-source:userset;mso-width-alt:2248;'/>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl66" height="14.95" width="80.15" style='height:14.75pt;width:79.05pt;' x:str>海思教育</td>
+    <td class="xl65" width="82.99" style='width:81.85pt;'></td>
+    <td class="xl65" width="97.99" style='width:96.65pt;'></td>
+    <td class="xl65" width="108.03" style='width:106.55pt;'></td>
+    <td class="xl65" width="111.98" style='width:110.45pt;'></td>
+    <td class="xl65" width="129.98" style='width:128.20pt;'></td>
+    <td class="xl65" width="166.99" style='width:164.70pt;'></td>
+    <td class="xl65" width="170.99" style='width:168.65pt;'></td>
+    <td class="xl65" width="80.15" style='width:79.05pt;'></td>
+    <td class="xl65" width="80.15" style='width:79.05pt;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl66" height="14.95" style='height:14.75pt;' x:str>一级菜单</td>
+    <td class="xl65" x:str>二级菜单</td>
+    <td class="xl65" x:str>三级菜单/功能</td>
+    <td class="xl65" x:str>四级菜单/功能</td>
+    <td class="xl65" x:str>五级功能</td>
+    <td class="xl65" x:str>权限所有者</td>
+    <td class="xl65" x:str>示例用户</td>
+    <td class="xl65" x:str>简要说明</td>
+    <td class="xl65" x:str>功能负责人</td>
+    <td class="xl65" x:str>完成情况</td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl66" height="14.95" style='height:14.75pt;' x:str>平台管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl66" x:str>公共学校管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>新增学校</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>删除学校</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护学校</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>查询学校报表</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl66" x:str>系统管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>管理员维护</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>注册管理员</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>删除管理员</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护管理员</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>查询管理员</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>数据维护</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>初始化平台</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>数据备份</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>数据恢复</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>平台管理员</td>
+    <td class="xl65" x:str>Administrator</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl66" height="14.95" style='height:14.75pt;' x:str>学校管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl66" x:str>课程管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>添设课程</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>删除课程</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护课程</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护课程目录树</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="4" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护章节知识点</td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="4" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>维护配套视频</td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="4" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>维护教案资料</td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl66" x:str>查询课程信息</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>教师管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>注册教师</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>删除教师</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>维护教师</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>查询教师信息</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>专业/班级管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>注册专业班级</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>删除专业班级</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>查询专业班级</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>删除专业班级</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>学生管理</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>批量操作</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>导入批量学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>删除批量学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>修改批量学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>查询批量学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>单例操作</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>新增学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>删除学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>修改学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="3" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>查询学生信息</td>
+    <td class="xl65"></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>培养方案管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>新增培养方案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>删除培养方案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>维护培养方案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>并入知识能力</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>撤除知识能力</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>查询培养方案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>学生能力管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>新增知识能力</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>维护知识能力</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>删除知识能力</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>查询知识能力</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>学情管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员</td>
+    <td class="xl65" x:str>qunuadmin</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>学生学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>班级学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>课程学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>能力学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>知识点学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学校管理员、教师用户</td>
+    <td class="xl65" x:str>qunuadmin、teacherni</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>在线教育</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>开始学习</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>在线指导</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>电子教案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>在线选课</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>课堂大厅</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>我的学校</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>我的企业</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>我的培养方案</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>自我评估</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>我的学情</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>在线测试</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>学生用户</td>
+    <td class="xl65" x:str>studentgao</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;' x:str>个人管理</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>我的账户</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>查询账户信息</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" colspan="2" style='height:14.75pt;mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>修改账户信息</td>
+    <td class="xl65" colspan="2" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>历史记录</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <tr height="14.95" style='height:14.75pt;'>
+    <td class="xl65" height="14.95" style='height:14.75pt;'></td>
+    <td class="xl65" x:str>退出登录</td>
+    <td class="xl65" colspan="3" style='mso-ignore:colspan;'></td>
+    <td class="xl65" x:str>全部用户无特指</td>
+    <td class="xl65" colspan="4" style='mso-ignore:colspan;'></td>
+   </tr>
+   <![if supportMisalignedColumns]>
+    <tr width="0" style='display:none;'>
+     <td width="80" style='width:79;'></td>
+     <td width="83" style='width:82;'></td>
+     <td width="98" style='width:97;'></td>
+     <td width="108" style='width:107;'></td>
+     <td width="112" style='width:110;'></td>
+     <td width="130" style='width:128;'></td>
+     <td width="167" style='width:165;'></td>
+     <td width="171" style='width:169;'></td>
+     <td width="80" style='width:79;'></td>
+    </tr>
+   <![endif]>
+  </table>
+ </body>
+</html>
