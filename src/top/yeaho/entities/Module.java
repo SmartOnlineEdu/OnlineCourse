@@ -6,6 +6,36 @@ public class Module {
 	private String moduleLink;
 	private String tip;
 	private String moduleBerif;
+	private String moduleKeywords;
+	private String moduleAuthor;
+	private String moduleDescription;
+	private String pageTitle;
+	
+	
+	public String getPageTitle() {
+		return pageTitle;
+	}
+	public void setPageTitle(String pageTitle) {
+		this.pageTitle = pageTitle;
+	}
+	public String getModuleDescription() {
+		return moduleDescription;
+	}
+	public void setModuleDescription(String moduleDescription) {
+		this.moduleDescription = moduleDescription;
+	}
+	public String getModuleKeywords() {
+		return moduleKeywords;
+	}
+	public void setModuleKeywords(String moduleKeywords) {
+		this.moduleKeywords = moduleKeywords;
+	}
+	public String getModuleAuthor() {
+		return moduleAuthor;
+	}
+	public void setModuleAuthor(String moduleAuthor) {
+		this.moduleAuthor = moduleAuthor;
+	}
 	public String getModuleName() {
 		return moduleName;
 	}

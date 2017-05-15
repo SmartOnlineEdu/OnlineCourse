@@ -10,10 +10,11 @@
 
 <head>
 	<meta charset="utf-8">
-    <title>山东省教育教学改革项目</title>
+    <title>${module.pageTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="${module.moduleDescription}">
+    <meta name="keywords" content="${module.moduleKeywords}" />
+    <meta name="author" content="${module.moduleAuthor}">
     <base href=" <%=basePath%>">
     <!-- Le styles -->
     <script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -158,7 +159,7 @@
     <!-- SIDE MENU -->
     <div id="skin-select">
         <div id="logo">
-            <h1>联合教育
+            <h1>海思教育
                 <span>v1.0</span>
             </h1>
         </div>

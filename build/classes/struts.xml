@@ -22,7 +22,7 @@
 		
 		<!-- 管理员注册的逻辑判断 -->
 		<action name="checkRegAdmin" class="AdminAction" method="checkRegAdmin">
-			<result name="SUCCESS">/temp/Admin/regSuccess.html</result>
+			<result name="SUCCESS">/temp/Admin/informationAdmin.jsp</result>
 			<result name="FAILED">/</result>
 		</action>
 		

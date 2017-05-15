@@ -119,6 +119,22 @@ public class AdminAction extends ActionSupport{
 	 * 用于注册管理员显示注册页面 
 	 * */
 	public String regAdminView(){
+		ActionContext actionContext = ActionContext.getContext();
+		module.setModuleAuthor("Jeff Scoot");
+		module.setModuleDescription("海思教育本科专科企业3+2教育平台课程添加页面");
+		module.setModuleKeywords("海思教育,本科,专科,企业,校企合作,3+2教学,3+2教育平台,管理员添加");
+		module.setModuleName("添加管理员");
+		module.setModuleLink("regCourse.action");
+		module.setTip("为学校新建管理员以管理学校日常教务");
+		module.setModuleBerif("请您填写管理员信息，点击按钮提交信息");
+		module.setPageTitle("学校管理员注册 - 海思教育");
+		student.setStudentName("高峰");
+		student.setStudentCampus("曲阜师范大学");
+		student.setStudentClass("2014级软件外包对日");
+		student.setStudentCompany("青岛英谷教育");
+		
+		actionContext.put("module", module);
+		actionContext.put("student", student);
 		return "reg";
 	}
 	
@@ -134,10 +150,14 @@ public class AdminAction extends ActionSupport{
 	 * */
 	public String regCourseView(){
 		ActionContext actionContext = ActionContext.getContext();
+		module.setModuleAuthor("Jeff Scoot");
+		module.setModuleDescription("海思教育本科专科企业3+2教育平台课程添加页面");
+		module.setModuleKeywords("海思教育,本科,专科,企业,校企合作,3+2教学,3+2教育平台,课程添加,添加课程");
 		module.setModuleName("添加课程");
 		module.setModuleLink("regCourse.action");
 		module.setTip("允许学校管理员增设新的课程");
 		module.setModuleBerif("请先填写基础信息，随后进入课程详情设置页面");
+		module.setPageTitle("学校添加课程 - 海思教育");
 		student.setStudentName("曹燕妮");
 		student.setStudentCampus("曲阜师范大学");
 		student.setStudentClass("2014级软件开发");
@@ -163,6 +183,24 @@ public class AdminAction extends ActionSupport{
 		admin.setAdminName(this.adminName);
 		admin.setAdminPwd(this.adminPassword);
 		adminServiceImpl.addAdmin(admin);
+		ActionContext actionContext = ActionContext.getContext();
+		module.setPageTitle("信息提示 - 海思教育");
+		module.setModuleAuthor("Jeff Scoot");
+		module.setModuleDescription("海思教育本科专科企业3+2教育平台信息提示");
+		module.setModuleKeywords("海思教育,本科,专科,企业,校企合作,3+2教学,3+2教育平台,操作结果");
+		module.setModuleName("添加管理员结果");
+		module.setModuleLink("regAdmin.action");
+		module.setTip("");
+		module.setModuleBerif("学校管理员添加成功，请您继续操作");
+		student.setStudentName("高峰");
+		student.setStudentCampus("曲阜师范大学");
+		student.setStudentClass("2014级软件外包对日");
+		student.setStudentCompany("惠普集团");
+		
+		actionContext.put("module", module);
+		actionContext.put("student", student);
+		
+		
 		return "SUCCESS";
 	}
 	

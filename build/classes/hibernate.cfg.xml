@@ -3,17 +3,16 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<!-- 数据库连接设置，这里使用mysql数据库，注意driver_class版本 -->
-		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://127.0.0.1:3306/onlineteach?useUnicode=true&amp;characterEncoding=UTF-8</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password"></property>
-		<!-- <property name="connection.password">JeffGAOfeng0532!@</property> -->
+		<!-- 数据库连接设置，这里使用postgreSQL数据库，注意driver_class版本 -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url">jdbc:postgresql://114.115.203.28:5432/smartcourse</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">postgresADMIN</property>
 
 
 		<!-- SQL dialect 方言 -->
-		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
-
+		<!-- <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
 
 		<!-- Echo all executed SQL to stdout -->
 		<property name="show_sql">true</property>
