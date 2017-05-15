@@ -83,11 +83,8 @@
                             <div class="body-nest" id="Blank_Page_Content">
 
                                ${module.moduleBerif}
-                               <br/><br/>
-                               <form name="regAdmin" method="post" action="checkRegAdmin.action">
-管理员用户名：<input name="adminName" type="text" />
-管理员密码：<input name="adminPassword" type="text" />
-<input type="submit" value="注册"/></form>
+                               
+                               
                                
                                
                                

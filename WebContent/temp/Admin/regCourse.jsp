@@ -84,10 +84,12 @@
 
                                ${module.moduleBerif}
                                <br/><br/>
-                               <form name="regAdmin" method="post" action="checkRegAdmin.action">
-管理员用户名：<input name="adminName" type="text" />
-管理员密码：<input name="adminPassword" type="text" />
-<input type="submit" value="注册"/></form>
+                               <form action="regCourseData.action" method="post">
+                               		课程编号：<input name="courseNo" placeholder="如“310001”" /> <br/><br/>
+                               		课程名称：<input name="courseName" placeholder="如“数据结构”" /><br/><br/>
+                               		课程简介：<textarea name="courseInformation" placeholder="请输入课程描述信息" rows="3"></textarea>
+                               		<br/><br/><input name="submit" type="submit" value="${module.moduleName}"> 
+                               </form>
                                
                                
                                

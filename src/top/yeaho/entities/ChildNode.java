@@ -1,5 +1,8 @@
 package top.yeaho.entities;
-
+/**
+ * author:高峰
+ * 这个类是为了实现课程树而设计，现已经升级使用王兆杰新开发的类
+ * */
 public class ChildNode {
 	private Integer id;
 	private String preNode;

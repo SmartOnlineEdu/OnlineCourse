@@ -3,10 +3,15 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="top.yeaho.entities">
-	<class name="Admin" table="tb_admin" schema="smartcourse">
-		<id column="ID" name="ID" type="int">
+	<class name="Admin" table="public.tb_admin" schema="smartcourse">
+		<!-- <id column="adminID" name="ID" type="int">
 			<generator class="native" />
-		</id>
+		</id> -->
+		<id column="adminID" name="ID" type="int">
+			<generator class="native" >
+				 <param name="sequence">seq_admin_id</param>
+			</generator>
+		</id> 
 		<property name="role" column="role" type="int" not-null="true"></property>
 		<property name="adminName" column="adminName" type="string" not-null="true"></property>
 		<property name="adminPwd" column="adminPwd" type="string" not-null="true"></property>
