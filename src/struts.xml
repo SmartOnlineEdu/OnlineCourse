@@ -8,7 +8,7 @@
     <constant name="struts.configuration.xml.reload" value="true"/>
 
 	<!-- 这个包配置是为管理员用户提供的规则空间 -->
-	<package name="admin" extends="struts-default">
+	<package name="admin" extends="struts-default" >
 		
 		<!-- 管理员注册时用于显示第一屏 -->
 		<action name="regAdmin" class="AdminAction" method="regAdminView">
