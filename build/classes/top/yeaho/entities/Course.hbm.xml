@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="top.yeaho.entities">
+	<class name="Course" table="public.tb_course" schema="smartcourse">
+		<id column="courseID" name="id" type="int">
+			<!-- <generator class="native" />-->
+			<generator class="native" >
+				 <param name="sequence">seq_course_id</param>
+			</generator>
+		</id>
+		<property name="courseName" column="courseName" type="string" not-null="true"></property>
+	</class>
+</hibernate-mapping>
