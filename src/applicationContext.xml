@@ -6,43 +6,43 @@
 		
 		
 	<!-- Session工厂注册 -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" scope="prototype">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" >
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
     </bean>
     
     
     <!-- Dao层实现类注册 -->		
-    <bean id="AdminDaoImpl" class="top.yeaho.dao.AdminDaoImpl" scope="prototype">
+    <bean id="AdminDaoImpl" class="top.yeaho.dao.AdminDaoImpl" >
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 	
-	<bean id="AdminServiceImpl" class="top.yeaho.service.AdminServiceImpl" scope="prototype">
+	<bean id="AdminServiceImpl" class="top.yeaho.service.AdminServiceImpl" >
 		<property name="adminDaoImpl" ref="AdminDaoImpl"></property>
 	</bean>
 	
-	<bean id="SchoolDaoImpl" class="top.yeaho.dao.SchoolDaoImpl" scope="prototype">
+	<bean id="SchoolDaoImpl" class="top.yeaho.dao.SchoolDaoImpl" >
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<!-- Service层实现类注册 -->
-	<bean id="SchoolServiceImpl" class="top.yeaho.service.SchoolServiceImpl" scope="prototype">
-		<property name="schoolDaoImpl" ref="SchoolServiceImpl"></property>
+	<bean id="SchoolServiceImpl" class="top.yeaho.service.SchoolServiceImpl" >
+		<property name="schoolDaoImpl" ref="SchoolDaoImpl"></property>
 	</bean>
 	
 	
 	<!-- Entities实体类注册 -->
-	<bean id="Admin" class="top.yeaho.entities.Admin" scope="prototype"></bean>
-	<bean id="Course" class="top.yeaho.entities.Course" scope="prototype"></bean>
-	<bean id="Teacher" class="top.yeaho.entities.Teacher" scope="prototype"></bean>
-	<bean id="StudentCourseTeacherPlan" class="top.yeaho.entities.StudentCourseTeacherPlan" scope="prototype"></bean>
-	<bean id="School" class="top.yeaho.entities.School" scope="prototype"></bean>
-	<bean id="Student" class="top.yeaho.entities.Student" scope="prototype"></bean>
-	<bean id="Module" class="top.yeaho.entities.Module" scope="prototype"></bean>
-	<bean id="SchoolClass" class="top.yeaho.entities.SchoolClass" scope="prototype"></bean>
+	<bean id="Admin" class="top.yeaho.entities.Admin" ></bean>
+	<bean id="Course" class="top.yeaho.entities.Course" ></bean>
+	<bean id="Teacher" class="top.yeaho.entities.Teacher" ></bean>
+	<bean id="StudentCourseTeacherPlan" class="top.yeaho.entities.StudentCourseTeacherPlan" ></bean>
+	<bean id="School" class="top.yeaho.entities.School" ></bean>
+	<bean id="Student" class="top.yeaho.entities.Student" ></bean>
+	<bean id="Module" class="top.yeaho.entities.Module" ></bean>
+	<bean id="SchoolClass" class="top.yeaho.entities.SchoolClass" ></bean>
 	
 
 	<!-- Action注册 -->
-	<bean id="AdminAction" class="top.yeaho.action.AdminAction" scope="prototype">
+	<bean id="AdminAction" class="top.yeaho.action.AdminAction" >
 		<property name="adminServiceImpl" ref="AdminServiceImpl"></property>
 		<property name="admin" ref="Admin"></property>	 
 		<property name="course" ref="Course"></property>
