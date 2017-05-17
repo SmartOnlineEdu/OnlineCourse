@@ -10,37 +10,33 @@ import java.util.Properties;
 import java.util.Map.Entry;
 
 public class DBOper {
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
+   private Connection conn = null;
+   private PreparedStatement pstmt = null;
+   private ResultSet rs = null;
 
     /**
      * 得到数据库连接
      */
-
-
-
     public Connection getConn(String server, String dbname, String user,
                               String pwd) throws ClassNotFoundException, SQLException,
             InstantiationException, IllegalAccessException {
-        String DRIVER = "com.mysql.jdbc.Driver";
-        String URL = "jdbc:mysql://" + server + ":3306/" + dbname + "?user="
+        String DRIVER = "org.postgresql.Driver";
+        String URL = "jdbc:postgresql://" + server + ":5432/" + dbname + "?user="
                 + user + "&password=" + pwd+"&useUnicode=true&characterEncoding=utf8";
         Class.forName(DRIVER).newInstance();
         conn = DriverManager.getConnection(URL);
-        //System.out.print("连接成功");
         return conn;
     }
 
     public Connection getConnPas() throws ClassNotFoundException, SQLException,
             InstantiationException, IllegalAccessException {
-        String server = "localhost";
-    	//String server = "[2001::1]";
-        String dbname = "smartcourse";
-        String user = "root";
-        String pwd = "JeffGAOfeng0532!@";
-        String DRIVER = "com.mysql.jdbc.Driver";
-        String URL = "jdbc:mysql://" + server + ":3306/" + dbname + "?user="
+    	
+        String server = "114.115.203.28";
+        String dbname = "windward";
+        String user = "postgres";
+        String pwd = "postgresADMIN";
+        String DRIVER = "org.postgresql.Driver";
+        String URL = "jdbc:postgresql://" + server + ":5432/" + dbname + "?user="
                 + user + "&password=" + pwd+"&useUnicode=true&characterEncoding=utf8";
         Class.forName(DRIVER).newInstance();
         conn = DriverManager.getConnection(URL);
@@ -125,11 +121,5 @@ public class DBOper {
             e.printStackTrace();
         }
         return num;
-    }
-    public static void main(String[] args) {
-        Properties p = System.getProperties();
-        for(Entry<Object, Object> e:p.entrySet()){
-            System.out.println(e.getKey()+"= "+e.getValue());
-        }
     }
 }

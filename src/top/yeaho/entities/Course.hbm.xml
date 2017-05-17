@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="top.yeaho.entities">
+	<class name="Course" table="tb_courses" schema="public">
+		<id name="id" column="ID">
+			<generator class="native"/>
+		</id>
+		<property name="courseName" column="_courseName" type="string" not-null="true"/>
+		<property name="courseNumber" column="_courseNumber" type="int" />
+		<property name="hours" column="_hours" type="int"/>
+		<property name="notes" column="_notes" type="string"/>
+	</class>
+</hibernate-mapping>

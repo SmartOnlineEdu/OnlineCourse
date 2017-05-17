@@ -4,7 +4,7 @@
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="top.yeaho.entities">
 
-	<class name="School" table="tb_school" schema="onlineteach">
+	<class name="School" table="tb_school" schema="public">
 		<id column="ID" name="id" type="int">
 			<generator class="native" />
 		</id>

@@ -13,14 +13,6 @@ public class AdminDaoImpl implements AdminDao{
 	
 	private SessionFactory sessionFactory;
 
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
-	}
-
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-
 	@Override
 	public List<Admin> getAllAdmin() {
 		// TODO Auto-generated method stub
@@ -59,6 +51,19 @@ public class AdminDaoImpl implements AdminDao{
 	public boolean queryAdmin() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public AdminDaoImpl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
 	}
 	
 }

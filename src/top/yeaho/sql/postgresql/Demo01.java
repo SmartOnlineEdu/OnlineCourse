@@ -24,7 +24,7 @@ public class Demo01 {
 	                     " AGE             TEXT    NOT NULL)"; */
 			String createTable = "CREATE TABLE information "+ 
                     "(id SERIAL PRIMARY KEY NOT NULL ," + 
-                    " info JSONB NOT NULL)" ;
+                    " info JSO9NB NOT NULL)" ;
 			System.out.println(createTable);
 			//String sql = "INSERT INTO information (info) VALUES ( '{\"age\":20,\"name\":\"jeff\"}')";
 			String sql = "INSERT INTO information (info) VALUES ( '{\"age\":19,\"name\":\"apple\"}')";

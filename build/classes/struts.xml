@@ -6,13 +6,13 @@
     <constant name="struts.devMode" value="false" />
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.configuration.xml.reload" value="true"/>
+	
 	<package name="website_basic" extends="struts-default" >
-	 
-	 <action name="index" class="IndexAction" method="index">
-	 	<result name="SUCCESS">/index.jsp</result>
-	 </action>
-
+		<action name="index" class="IndexAction" method="index">
+	 		<result name="SUCCESS">/index.jsp</result>
+		</action>
 	</package>
+	
 	<package name="admin" extends="struts-default">
 		<action name="regAdmin" class="AdminAction" method="reg">
 			<result name="reg">/temp/Admin/regAdmin.jsp</result>
@@ -32,12 +32,38 @@
 	 	<result name="SUCCESS">/index.jsp</result>
 	 </action>
 	</package>
+	
 	<package name="school" extends="struts-default">
 		<action name="regSchool" class="SchoolAction" method="reg">
 			<result name="reg">/regSchool.jsp</result>
 		</action>
 		<action name="checkRegSchool" class="SchoolAction" method="checkRegSchool">
 			<result name="success">/regSchoolResult.jsp</result>
+		</action>
+	</package>
+	
+	<package name="courseTree" extends="struts-default">
+		<action name="showTree" class="TreeAction" method="showTree">
+			<result name="success">/courseTree/showTree.jsp</result>
+		</action>
+		<action name="createTable" class="TreeAction" method="createTable">
+			<result name="success">/courseTree/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		<action name="getAllCourse" class="TreeAction" method="getAllCourse">
+			<result name="success">/courseTree/allCourse.jsp</result>
+		</action>
+		<action name="insertChapter" class="TreeAction" method="insertIntoTable">
+			<result name="success">/courseTree/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		<action name="deleteChapter" class="TreeAction" method="deleteChapter">
+			<result name="success">/courseTree/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		<action name="updateChapter" class="TreeAction" method="updateChapter">
+			<result name="success">/courseTree/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
 		</action>
 	</package>
 </struts>

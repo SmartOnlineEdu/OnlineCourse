@@ -9,21 +9,35 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" scope="prototype">
         <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
     </bean>
-    		
+    <!-- DBOper实例 、单例-->
+    <bean id="dbOper" class="top.yeaho.db.DBOper" scope="singleton"></bean>
+    
+    <!-- Dao层实例注册 -->		
     <bean id="AdminDaoImpl" class="top.yeaho.dao.AdminDaoImpl" scope="prototype">
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
-	
 	<bean id="AdminServiceImpl" class="top.yeaho.service.AdminServiceImpl" scope="prototype">
 		<property name="adminDaoImpl" ref="AdminDaoImpl"></property>
 	</bean>
-	
 	<bean id="SchoolDaoImpl" class="top.yeaho.dao.SchoolDaoImpl" scope="prototype">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean id="courseDao" class="top.yeaho.dao.CourseDao" >
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="treeDao" class="top.yeaho.dao.TreeDao" >
+		<property name="dbOper" ref="dbOper"></property>
+	</bean>
 	
+	<!-- Service层实例注册 -->
 	<bean id="SchoolServiceImpl" class="top.yeaho.service.SchoolServiceImpl" scope="prototype">
 		<property name="schoolDaoImpl" ref="SchoolServiceImpl"></property>
+	</bean>
+	<bean id="courseService" class="top.yeaho.service.CourseService" scope="prototype">
+		<property name="courseDao" ref="courseDao"></property>
+	</bean>
+	<bean id="treeService" class="top.yeaho.service.TreeService" scope="prototype">
+		<property name="treeDao" ref="treeDao"></property>
 	</bean>
 	
 	<!-- 实体类注册 -->
@@ -38,6 +52,11 @@
 	</bean>
 	<bean id="IndexAction" class="top.yeaho.action.IndexAction"></bean>
 	<bean id="SchoolAction" class="top.yeaho.action.SchoolAction"></bean>
+	<bean id="TreeAction" class="top.yeaho.action.TreeAction">
+		<property name="courseService" ref="courseService"></property>
+		<property name="treeService" ref="treeService"></property>
+	</bean>
+	
 	
 	
 	

@@ -2,18 +2,18 @@ package top.yeaho.service;
 
 import java.util.List;
 
-import top.yeaho.dao.AdminDaoImpl;
+import top.yeaho.dao.AdminDao;
 import top.yeaho.entities.Admin;
 
 public class AdminServiceImpl implements AdminService{
 
-	private AdminDaoImpl adminDaoImpl;
+	private AdminDao adminDaoImpl;
 	
-	public void setAdminDaoImpl(AdminDaoImpl adminDaoImpl){
+	public void setAdminDaoImpl(AdminDao adminDaoImpl){
 		this.adminDaoImpl = adminDaoImpl;
 	}
 	
-	public AdminDaoImpl getAdminDaoImpl() {
+	public AdminDao getAdminDaoImpl() {
 		return adminDaoImpl;
 	}
 

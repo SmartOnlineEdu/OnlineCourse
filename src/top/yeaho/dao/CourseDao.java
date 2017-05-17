@@ -1,23 +1,34 @@
 package top.yeaho.dao;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
-import top.yeaho.entities.School;
+/**
+ * 课程dao层，获取数据库课程信息
+ * @author wang zhaojie 
+ */
+public class CourseDao {
 
-public class SchoolDaoImpl {
 	private SessionFactory sessionFactory;
-	
-	public void addSchool(School school){
-		Session session = sessionFactory.openSession();
-		Transaction transaction =  session.beginTransaction();
-		session.save(school);
-		transaction.commit();
-		session.close();
-	}
 
-	public SchoolDaoImpl() {
+	/**
+	 * 查看所有已存在的课程
+	 * @return
+	 */
+	public  List getAllCourse()
+	{		
+		Session session = sessionFactory.openSession();
+		 Query query = session.createQuery("from Course");
+		List list = query.list();
+		session.close();
+		return list;
+	}
+	
+	public CourseDao() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -29,4 +40,6 @@ public class SchoolDaoImpl {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+	
+	
 }
