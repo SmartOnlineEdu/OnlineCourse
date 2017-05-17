@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="top.yeaho.entities">
+	<class name="SchoolClass" table="public.tb_schoolClass" schema="smartcourse">
+		<id column="schoolClassId" name="schoolClassId" type="int">
+			<generator class="native" >
+			</generator>
+		</id> 
+		<property name="schoolclassNo" column="schoolclassNo" type="string" not-null="true"></property>
+		<property name="schoolclassName" column="schoolclassName" type="string" not-null="true"></property>
+		<property name="school" column="school" type="string" not-null="true"></property>
+	</class>
+</hibernate-mapping>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  "/dtd/hibernate-configuration-3.0.dtd">
+
+<!-- "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" -->
 <hibernate-configuration>
 
 	<session-factory>
@@ -26,6 +28,7 @@
 		<mapping resource="top/yeaho/entities/Teacher.hbm.xml" />
 		<mapping resource="top/yeaho/entities/Student.hbm.xml" />
 		<mapping resource="top/yeaho/entities/StudentCourseTeacherPlan.hbm.xml" />
+		<mapping resource="top/yeaho/entities/SchoolClass.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>

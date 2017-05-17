@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true"/>
+	
+	 
+	<!-- 这个包配置是为管理员用户提供的规则空间 -->
+	<package name="admin" extends="struts-default" namespace="/Administration">
+		
+		<!-- 管理员注册时用于显示第一屏 -->
+		<action name="regAdmin" class="AdminAction" method="regAdminView">
+			<result name="reg">/temp/Admin/regAdmin.jsp</result>
+		</action>
+		
+		<!-- 管理员登陆时用于显示第一屏 -->
+		<action name="loginAdmin" class="AdminAction" method="loginAdminView">
+			<result name="login">/temp/Admin/loginAdmin.jsp</result>
+		</action>
+		
+		<!-- 管理员注册的逻辑判断 -->
+		<action name="checkRegAdmin" class="AdminAction" method="checkRegAdmin">
+			<result name="SUCCESS">/temp/Admin/informationAdmin.jsp</result>
+			<result name="FAILED">/</result>
+		</action>
+		
+		<!-- 管理员登录的逻辑判断 -->
+		<action name="checkAdminLogin" class="AdminAction" method="checkLogin">
+			<result name="SUCCESS">/</result>
+			<result name="FAILED">/</result>
+		</action>
+
+		<!-- 管理员添加一门课程用于显示的第一屏 -->
+	 	<action name="regCourse" class="AdminAction" method="regCourseView">
+	 		<result name="success">/temp/Admin/regCourse.jsp</result>
+	 	</action>
+	 	
+	 	<!-- 管理员添加一门课程用于接受提交信息 -->
+	 	<action name="regCourseData" class="AdminAction" method="regCourseData">
+	 		<result name="success">/temp/Admin/regCourseResult.jsp</result>
+	 	</action>
+	 	
+	</package>
+	
+</struts>

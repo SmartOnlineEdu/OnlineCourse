@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true"/>
+	
+	<!-- 这个包配置是为系统管理员用户提供的规则空间 -->
+	<package name="administration" extends="struts-default">
+	
+		<!-- 当平台需要添加新的学校显示的第一屏 -->
+		<action name="regSchool" class="SchoolAction" method="reg">
+			<result name="reg">/regSchool.jsp</result>
+		</action>
+		
+		<!-- 平台添加学校的业务逻辑判断 -->
+		<action name="checkRegSchool" class="SchoolAction" method="checkRegSchool">
+			<result name="success">/regSchoolResult.jsp</result>
+		</action>
+	</package>
+	
+</struts>
