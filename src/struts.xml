@@ -3,41 +3,72 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-    <constant name="struts.devMode" value="false" />
+    <constant name="struts.devMode" value="true" />
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
     <constant name="struts.configuration.xml.reload" value="true"/>
-	<package name="website_basic" extends="struts-default" >
-	 
-	 <action name="index" class="IndexAction" method="index">
-	 	<result name="SUCCESS">/index.jsp</result>
-	 </action>
 
-	</package>
+	<!-- 这个包配置是为管理员用户提供的规则空间 -->
 	<package name="admin" extends="struts-default">
-		<action name="regAdmin" class="AdminAction" method="reg">
+		
+		<!-- 管理员注册时用于显示第一屏 -->
+		<action name="regAdmin" class="AdminAction" method="regAdminView">
 			<result name="reg">/temp/Admin/regAdmin.jsp</result>
 		</action>
-		<action name="loginAdmin" class="AdminAction" method="login">
+		
+		<!-- 管理员登陆时用于显示第一屏 -->
+		<action name="loginAdmin" class="AdminAction" method="loginAdminView">
 			<result name="login">/temp/Admin/loginAdmin.jsp</result>
 		</action>
+		
+		<!-- 管理员注册的逻辑判断 -->
 		<action name="checkRegAdmin" class="AdminAction" method="checkRegAdmin">
-			<result name="SUCCESS">/temp/Admin/regSuccess.html</result>
+			<result name="SUCCESS">/temp/Admin/informationAdmin.jsp</result>
 			<result name="FAILED">/</result>
 		</action>
+		
+		<!-- 管理员登录的逻辑判断 -->
 		<action name="checkAdminLogin" class="AdminAction" method="checkLogin">
 			<result name="SUCCESS">/</result>
 			<result name="FAILED">/</result>
 		</action>
-		<action name="*" class="IndexAction" method="index">
-	 	<result name="SUCCESS">/index.jsp</result>
-	 </action>
+
+		<!-- 管理员添加一门课程用于显示的第一屏 -->
+	 	<action name="regCourse" class="AdminAction" method="regCourseView">
+	 		<result name="success">/temp/Admin/regCourse.jsp</result>
+	 	</action>
+	 	
+	 	<!-- 管理员添加一门课程用于接受提交信息 -->
+	 	<action name="regCourseData" class="AdminAction" method="regCourseData">
+	 		<result name="success">/temp/Admin/regCourseResult.jsp</result>
+	 	</action>
+	 	
 	</package>
-	<package name="school" extends="struts-default">
+	
+	<!-- 这个包配置是为系统管理员用户提供的规则空间 -->
+	<package name="administration" extends="struts-default">
+	
+		<!-- 当平台需要添加新的学校显示的第一屏 -->
 		<action name="regSchool" class="SchoolAction" method="reg">
 			<result name="reg">/regSchool.jsp</result>
 		</action>
+		
+		<!-- 平台添加学校的业务逻辑判断 -->
 		<action name="checkRegSchool" class="SchoolAction" method="checkRegSchool">
 			<result name="success">/regSchoolResult.jsp</result>
 		</action>
+	</package>
+	
+	<!-- 这个包配置是基本页面显示的规则空间 -->
+	<package name="website_basic" extends="struts-default" >
+		
+		<!-- 当访问index.action时显示主页 -->
+		 <action name="index" class="IndexAction" method="index">
+		 	<result name="SUCCESS">/index.jsp</result>
+		 </action>
+		 
+		 <!-- 当访问路径非法或不被网站业务逻辑接受时一律显示主页 -->
+		<action name="*" class="IndexAction" method="index">
+	 		<result name="SUCCESS">/index.jsp</result>
+	 	</action>
 	</package>
 </struts>

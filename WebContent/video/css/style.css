@@ -1,0 +1,748 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "微软雅黑";
+     
+            
+        }
+
+        /*.idDom {
+            width: 100%;
+            height: 60px;
+            background: #666;
+            position: fixed;
+            bottom: 0px;
+        }*/
+
+        /*.content {
+            display: inline-block;
+            width: 430px;
+            height: 40px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+        }*/
+
+        .btnBulletinput {
+            border: none;
+            width: 300px;
+            height: 30px;
+        }
+
+        .stringSend {
+            width: 300px;
+            height: 40px;
+            position: absolute;
+            overflow: hidden;
+            color: #00BBFF;
+           
+            line-height: 1.5em;
+            cursor: default;
+        }
+#videoContainer {
+	position: relative;
+	width: 800px;
+	height: 480px;
+	overflow: hidden;
+	color: #f30;
+	background: #000000;
+
+}
+
+.caption {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+	padding: 10px;
+	color: #E5E5E5;
+	font-size: 20px;
+	box-sizing: border-box;
+	font-weight: bold;
+	-ms-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	
+}
+.bottomContainer{
+	display: none;
+}
+/*** VIDEO CONTROLS CSS ***/
+/* control holder */
+
+.control {
+	
+	color: #ccc;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+/* 	opacity: 0.8; */
+	width: 100%;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+
+}
+/* control top part */
+
+.topControl {
+	overflow: visible;
+	height: 22px;
+	border-bottom: 1px solid #404040;
+	padding: 1px 10px;
+	position: relative;
+	top: -40px;
+	outline: none;
+	border:none;
+-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	/* margin-bottom: 100px; */
+	/* fallback */
+}
+
+.tip{
+	position: absolute;
+	bottom: 65px;
+	width: 50px;
+	height: 20px;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	display: none;
+	float: left;
+	left:0;
+}
+
+.currentTip{
+	position: absolute;
+	bottom: 40px;
+	width: 40px;
+	height: 20px;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	color: #f30;
+	display: none;
+	z-index: 15;
+	line-height: 20px;
+	padding:0 5px;
+	bottom: 65px;
+}
+/* PROGRESS BAR CSS */
+/* Progress bar */
+
+.progress {
+	width: 100%;
+	height: 5px;
+	position: relative;
+	float: left;
+	cursor: pointer;
+	background: #333333;
+	/* fallback */
+	display: block;
+	top:0px;
+	border-radius: 5px;
+		-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.3s, height 0.3s, transform 0.3s;
+}
+
+
+.progress:hover .toptimeBar{
+	width: 10px;
+	height: 10px;
+	display: block;
+}
+.progress:hover .prompt{
+	width: 10px;
+	height: 10px;
+}
+.progress span {
+	position: absolute;
+	display: block;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+.toptimeBar{
+	left: 0;
+	position: absolute;
+	z-index: 15;
+	overflow:visible;
+	display: inline-block;
+	border-radius: 5px;
+	height: 8px;
+	width: 8px;
+	background: #f30;
+	display: none;
+	margin-left: -3px;
+	top: -1.6px;
+			-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.3s, height 0.3s, transform 0.3s;
+}
+.timeBar {
+	left: 0;
+	z-index: 10;
+	width: 0;
+	height: 100%;
+	top: 0px;
+	background: #f30;
+	/* fallback */
+
+}
+
+.prompt{
+	position: absolute;
+	z-index: 15;
+	overflow:visible;
+	display: block;
+	border-radius: 5px;
+	height: 8px;
+	width: 8px;
+	background: #f30;
+	top: -1.6px;
+	box-shadow:0 1px 1px #f33 inset;
+	-moz-box-shadow:0 1px 1px #f33 inset;
+	-webkit-box-shadow:0 1px 1px #f33 inset;
+			-webkit-transition: width 0.3s, height 0.3s, -webkit-transform 0.3s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.3s, height 0.3s, transform 0.3s;
+}
+
+.prompt:hover .currentTip{
+	display: none;
+}
+
+.bufferBar {
+	z-index: 5;
+	width: 0;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #777;
+	background: -moz-linear-gradient(top, #999, #666);
+	background: -webkit-linear-gradient(top, #999, #666);
+	background: -o-linear-gradient(top, #999, #666);
+
+}
+/* time and duration */
+
+
+
+/* control bottom part */
+.btmControl{
+	clear:both;
+	float: left;
+	position: absolute;
+	width: 100%;
+	height: 45px;
+	left: 0;
+	bottom: 0px;
+	overflow: visible;
+	color: #ccc;
+	font-size: 20px;
+	-webkit-filter: opacity(100%);
+	filter: opacity(100%);
+	}
+.btmControl #btnPlaydiv{
+	float: left;
+}
+/*暂停*/
+.btmControl .btnPause {
+	position: absolute;
+	float: left;
+	cursor: pointer;
+	margin-left: 20px;
+	display: none;
+}
+/*播放*/
+.btmControl .btnPlay{
+	float: left;
+	position: absolute;
+	margin-left: 25px;
+	top:0px;
+	cursor: pointer;
+}
+/*快进*/
+.btmControl .btnNext{
+	position: absolute;
+	display: block;
+	margin-left: 65px;
+	top: 0px;
+	cursor: pointer;
+	
+}
+.btnGo{
+	position: absolute;
+	display: block;
+	margin-left: 105px;
+	top: 0px;
+	cursor: pointer;
+}
+/*倍速*/
+.btmControl .btnSpeedalldiv{
+	position: absolute;
+	display: block;
+	right: 0;
+	margin-right: 95px;
+	cursor: pointer;
+	top: -3.2px;
+}
+
+.btmControl .btnSpeed{
+	position: absolute;
+	display: none;
+	left: 12px;
+}
+.btmControl .btnSpeed1{
+	
+	top: -32px;
+}
+
+.btmControl .btnSpeed2{
+
+	top: -64px;
+}
+.btmControl .btnSpeed3{
+
+	top: -96px;
+}
+.btmControl .btnSpeed4{
+
+	top: -128px;
+}
+.btmControl .btnSpeed5{
+
+	top: -160px;
+}
+.btmControl .btnSpeed6{
+
+	top: -192px;
+}
+.btmControl .btnSpeed7{
+
+	top: -225px;
+}
+.btmControl #btnSpeedalldiv:hover #btnSpeed1,
+.btmControl #btnSpeedalldiv:hover #btnSpeed2,
+.btmControl #btnSpeedalldiv:hover #btnSpeed3,
+.btmControl #btnSpeedalldiv:hover #btnSpeed4,
+.btmControl #btnSpeedalldiv:hover #btnSpeed5,
+.btmControl #btnSpeedalldiv:hover #btnSpeed6,
+.btmControl #btnSpeedalldiv:hover #btnSpeed7{
+	display: block;
+}
+/*弹幕*/
+.btmControl .btnBulletinput{
+	width: 400px;
+	height: 30px;
+	position: absolute;
+	display: block;
+	z-index: 20;
+	color: #fff;
+	padding: 2px 10px;
+	background-color: #e5e5e5;
+	-webkit-filter: opacity(80%);
+	filter: opacity(80%);
+	left: 50%;
+	margin-left: -220px;
+	top: -90px;
+	outline: none;
+	border: none;
+	display: none;
+}
+.btmControl .btnPublish{
+	width: 70px;
+	height: 34px;
+		background-color: #e5e5e5;
+	-webkit-filter: opacity(80%);
+	filter: opacity(80%);
+	border: none;
+	outline: none;
+	position: absolute;
+	left:50%;
+	margin-left: 220px;
+	top:-90px;
+	display: none;
+}
+/* VOLUME BAR CSS */
+/* volume bar */
+	
+.btmControl  .trumpt{
+	position: absolute;
+	margin-left: 150px;
+	top: 0;
+	display: block;
+	cursor: pointer;
+}
+
+
+/* VOLUME BAR CSS */
+/* volume bar */
+
+/* VOLUME BAR CSS */
+/* volume bar */
+.trumpt{
+	position: absolute;
+	margin-left: 150px;
+	top: 0;
+	display: block;
+	cursor: pointer;
+}
+	.trumptN{
+	position: absolute;
+	margin-left: 150px;
+	top: 0;
+	display: block;
+	cursor: pointer;
+		display: none;
+}
+.btnpublishbtn{
+		position: absolute;
+	margin-left: 245px;
+	top: 3.9px;
+	display: block;
+	cursor: pointer;
+	
+}
+.time {
+	position: absolute;
+	display: block;
+	right: 0px;
+	top:2px;
+	margin-right: 155px;
+	height: 32px;
+	cursor: pointer;
+	text-align: center;
+	
+}
+.volume{
+	position:absolute;
+	cursor:pointer;
+	width:70px;
+	height:8px;
+	margin-left: 185px;
+	top:12px;
+	float: left;
+	background-color: #000;
+
+}
+
+.volumeBar{
+	position:absolute;
+	cursor:pointer;
+	width:70px;
+	height:8px;
+	left:0;
+	top:0;
+	background-color:#eee;
+	float: left;
+
+}
+
+#size4{
+	position: absolute;
+	margin-right: 275px;
+	right: 0px;
+	cursor: pointer;
+	border:none;
+	
+}
+
+#size16{
+	position: absolute;
+	margin-right: 275px;
+	right: 0px;
+	cursor: pointer;
+	border:none;
+	display: none;
+}
+.btnlight{
+	position: absolute;
+	margin-right: 65px;
+	right: 0px;
+	top: 0;
+	cursor: pointer;
+}
+
+
+.btnFullScreenIn{
+	position: absolute;
+	right: 0;
+	margin-right: 0;
+	top: 0px;
+	cursor: pointer;
+	border:none;
+}
+.btnFullScreenOut{
+	position: absolute;
+	right: 0;
+	margin-right: 0;
+	top: 0px;
+	cursor: pointer;
+	display: none;
+	border:none;
+}
+.picturebtn{
+	position: absolute;
+	right: 0;
+	margin-right: 227px;
+	top: 0px;
+	cursor: pointer;
+	border:none;
+}
+.wrap {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: 1005;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255, 255, .8)
+}
+
+.wrap canvas {
+  display: block;
+  margin: 10px auto;
+  width: 600px;
+  cursor: pointer
+}
+/*.loading{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:url(loading.gif) no-repeat 50% 50%;
+	z-index:2;
+	display:none;
+}*/
+
+/* BODY {
+  background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 52%), -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 52%);
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 52%), linear-gradient(-45deg, rgba(255, 255, 255, 0) 48%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 52%);
+  -webkit-background-size: 1em 1em;
+  background-size: 1em 1em;
+  background-color: #000;
+} */
+
+
+#loading {
+  height: 120px;
+  width: 120px;
+  overflow: visible;
+  /*   border: 1px solid red; */
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left: -60px;
+	margin-top: -60px;
+	display: none;
+}
+
+.g-circles {
+  -webkit-transform: scale(0.9) translate(7px, 7px);
+  -ms-transform: scale(0.9) translate(7px, 7px);
+  transform: scale(0.9) translate(7px, 7px);
+}
+
+.circleg {
+  fill: #e5e5e5;
+  fill-opacity: 0;
+  -webkit-animation: opacity 1.2s linear infinite;
+  animation: opacity 1.2s linear infinite;
+}
+.circleg:nth-child(12n + 1) {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+.circleg:nth-child(12n + 2) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+.circleg:nth-child(12n + 3) {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+.circleg:nth-child(12n + 4) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+.circleg:nth-child(12n + 5) {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.circleg:nth-child(12n + 6) {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.circleg:nth-child(12n + 7) {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+.circleg:nth-child(12n + 8) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.circleg:nth-child(12n + 9) {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+.circleg:nth-child(12n + 10) {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.circleg:nth-child(12n + 11) {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+.circleg:nth-child(12n + 12) {
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+
+
+@-webkit-keyframes opacity {
+  3% {
+    fill-opacity: 1;
+  }
+
+  75% {
+    fill-opacity: 0;
+  }
+}
+
+@keyframes opacity {
+  3% {
+    fill-opacity: 1;
+  }
+
+  75% {
+    fill-opacity: 0;
+  }
+}
+
+
+@-webkit-keyframes transform {
+  10% {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+}
+@keyframes transform {
+  10% {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+  }
+}
+
+/*right*/
+.fromRight {
+    /*animation-timing-function*/
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    /*animation-iteration-count*/
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    /*transform-origin*/
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50px 50px;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-duration: .4s;
+    -moz-animation-duration: .4s;
+    -ms-animation-duration: .4s;
+    -o-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-name: right;
+    -moz-animation-name: right;
+    -ms-animation-name: right;
+    -o-animation-name: right;
+    animation-name: right;
+}
+/*left*/
+
+.leaveLeft{
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: 0.2s;
+    -ms-animation-delay: 0.2s;
+    -o-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    /*animation-timing-function*/
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    /*animation-iteration-count*/
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    /*transform-origin*/
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50px 50px;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation-duration: .4s;
+    -moz-animation-duration: .4s;
+    -ms-animation-duration: .4s;
+    -o-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-name: left;
+    -moz-animation-name: left;
+    -ms-animation-name: left;
+    -o-animation-name: left;
+    animation-name: left;
+}
+
+@-moz-keyframes right { 
+    0% { -webki-transform: translate(100px, 0px) }
+    1% { -webkit-transform: translate(100px, 0px) }
+    100% { -webkit-transform: translate(0px ,0px) }
+}
+@-webkit-keyframes right { 
+    0% { -webki-transform: translate(100px, 0px) }
+    1% { -webkit-transform: translate(100px, 0px) }
+    100% { -webkit-transform: translate(0px ,0px) }
+}
+@keyframes right { 
+    0% { transform: translate(100px, 0px) }
+    1% { transform: translate(100px, 0px) }
+    100% { display: none }
+}
+@-moz-keyframes left { 
+	0% { -webkit-transform: translate(0px ,0px) }
+	1% { -webkit-transform: translate(-100px, 0px) }
+    100% { -webki-display:none }
+   
+    
+}
+@-webkit-keyframes left { 
+    100% { -webki-transform: translate(-100px, 0px) }
+    1% { -webkit-transform: translate(-100px, 0px) }
+    0% { -webkit-display:none }
+}
+@keyframes left { 
+    100% { transform: translate(-100px, 0px) }
+    1% { transform: translate(-100px, 0px) }
+    0% { transform: translate(0px, 0px) }
+}
+
+

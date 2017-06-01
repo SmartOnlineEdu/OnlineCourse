@@ -37,6 +37,8 @@ public class Demo01 {
 	        	System.out.println("has next!");
 	        	System.out.println(rSet.getString(1));
 	        	/*测试github*/
+	        	//欢迎使用
+	        	/*Ubuntu高峰分支的测试*/
 	        	
 	        }
 			stmt.close();

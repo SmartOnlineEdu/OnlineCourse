@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="top.yeaho.entities">
+	<class name="Teacher" table="public.tb_teacher" schema="smartcourse">
+		<id column="teacherID" name="id" type="int">
+			<!-- <generator class="native" /> -->
+			<generator class="native" >
+				 <param name="sequence">seq_teacher_id</param>
+			</generator>
+		</id> 
+		<property name="teacherName" column="teacherName" type="string" not-null="true"></property>
+		<property name="teacherPassword" column="teacherPassword" type="string" not-null="true"></property>
+	</class>
+</hibernate-mapping>
