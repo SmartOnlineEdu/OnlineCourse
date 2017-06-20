@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<!-- 包含目录树的action各项配置 -->
+	<package name="tree" extends="struts-default">
+	
+		<!-- 展示目录树的action -->
+		<action name="showTree" class="treeAction" method="showTree">
+			<result>/treeTest/showTree.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		
+		<!-- 创建存储目录的表 -->
+		<action name="createTable" class="treeAction" method="createTable">
+			<result>/treeTest/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		
+		<!-- 插入章节 -->
+		<action name="insertChapter" class="treeAction" method="insertIntoTable">
+			<result>/treeTest/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		
+		<!-- 更新章节 -->
+		<action name="updateChapter" class="treeAction" method="updateChapter">
+			<result>/treeTest/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+		
+		<!-- 删除章节 -->
+		<action name="deleteChapter" class="treeAction" method="deleteChapter">
+			<result>/treeTest/success.jsp</result>
+			<result name="error" type="redirect">/404.html</result>
+		</action>
+	</package>
+
+</struts>

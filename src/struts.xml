@@ -3,10 +3,16 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
 	"http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-
+	<!-- 开启开发模式 -->
     <constant name="struts.devMode" value="true" />
+    
+    <!-- 开启动态方法调用  ，默认为true -->
     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    
+    <!-- 设置当struts.xml文件改变后，系统是否自动重新加载该文件。该属性的默认值是false -->
     <constant name="struts.configuration.xml.reload" value="true"/>
+    
+    <!-- 指定需要Struts2处理的请求后缀，该常量的默认值是action，即所有匹配*.action的请求都由Struts2处理 -->
     <constant name="struts.action.extension" value="action"/>
     
     <!-- 这个包配置是为管理员用户提供的规则空间 -->
@@ -17,5 +23,10 @@
     
     <!-- 这个包配置是基本页面显示的规则空间 -->
 	<include file="Struts.WebsiteBasic.xml"/>
+	
+	<!-- 配置文件上传、下载 -->
+	<include file="Struts.Upload.xml"/>
+	
+	<include file="Struts.Tree.xml"/>
 	
 </struts>

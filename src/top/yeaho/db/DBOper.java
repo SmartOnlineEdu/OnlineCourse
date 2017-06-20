@@ -17,9 +17,6 @@ public class DBOper {
     /**
      * 得到数据库连接
      */
-
-
-
     public Connection getConn(String server, String dbname, String user,
                               String pwd) throws ClassNotFoundException, SQLException,
             InstantiationException, IllegalAccessException {
@@ -28,19 +25,25 @@ public class DBOper {
                 + user + "&password=" + pwd+"&useUnicode=true&characterEncoding=utf8";
         Class.forName(DRIVER).newInstance();
         conn = DriverManager.getConnection(URL);
-        //System.out.print("连接成功");
         return conn;
     }
 
+    /**
+     * 
+     * @return 返回数据库的链接，开发时修改数据库的链接属性
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     */
     public Connection getConnPas() throws ClassNotFoundException, SQLException,
             InstantiationException, IllegalAccessException {
-        String server = "localhost";
-    	//String server = "[2001::1]";
-        String dbname = "smartcourse";
-        String user = "root";
-        String pwd = "JeffGAOfeng0532!@";
-        String DRIVER = "com.mysql.jdbc.Driver";
-        String URL = "jdbc:mysql://" + server + ":3306/" + dbname + "?user="
+        String server = "114.115.203.28";
+        String user = "postgres";
+        String pwd = "postgresADMIN";
+        String dbname = "windward";
+        String DRIVER = "org.postgresql.Driver";
+        String URL = "jdbc:postgresql://" + server + ":5432/" + dbname + "?user="
                 + user + "&password=" + pwd+"&useUnicode=true&characterEncoding=utf8";
         Class.forName(DRIVER).newInstance();
         conn = DriverManager.getConnection(URL);
@@ -125,11 +128,5 @@ public class DBOper {
             e.printStackTrace();
         }
         return num;
-    }
-    public static void main(String[] args) {
-        Properties p = System.getProperties();
-        for(Entry<Object, Object> e:p.entrySet()){
-            System.out.println(e.getKey()+"= "+e.getValue());
-        }
     }
 }

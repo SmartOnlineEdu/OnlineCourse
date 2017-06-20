@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <constant name="struts.action.extension" value="action"/>
+    
+    <!--struts2对整个项目的文件上传大小的控制 ，默认为2M，此处设置为1G-->
+    <constant name="struts.multipart.maxSize" value="1073741824"/>
+    
+    
+    <!-- 该package 用于文件上传Action的各项配置-->
+    <package name="upload" extends="struts-default">
+    	<action name="upload" class="uploadAction">
+    	
+    		<!-- 引用struts2提供的拦截器，对上传文件过滤 -->
+    		<interceptor-ref name="fileUpload">
+    			<!-- fileUpload拦截器对上传文件大小的限制，该值必须小于struts.multipart.maxSize -->
+    			<param name="maximumSize">1024*1024*1023</param>
+    			<param name=""></param>
+    		</interceptor-ref>
+    		
+    		<!-- 引用fileUpload拦截器后，必须手动引用 defaultStack拦截器栈，因为此时该action不会自动引用-->
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+    		
+    		<result name="success">success.jsp</result>	
+    		<!-- 文件上传失败时，自动跳转的视图，name的值固定为input -->
+    		<result name="input">fail.jsp</result>
+    	</action>
+    </package>
+    
+    <!-- 该package 用于文件下载Action的各项配置 -->
+    <package name="download" extends="struts-default">
+    	<action name="download" class="downloadAction">
+    		<!-- stream类型的result用于文件下载 -->
+    		<result type="stream" name="success">
+    			<!-- 指定下载文件的类型：未知类型时采用application/octet-stream -->
+    			<param name="contentType">application/octet-stream;charset=UTF-8</param>
+    			
+    			<!-- attachment指定浏览器不会试图打开该文件，而是直接下载；fileName指定下载时显示的文件名 -->
+    			<param name="contentDisposition">attachment;fileName="${downFileName}"</param>
+    			<!-- 指定用于下载的输入流：必须采用获取输入流的方法去掉get后，首字母小写后的方法名，如getDownloadFile()-->
+    			<param name="inputName">downloadFile</param>
+    			<!-- 指定缓冲池大小，单位为字节 -->
+    			<param name="bufferSize">2048</param>
+    		</result>
+    	</action>
+    </package>
+</struts>
